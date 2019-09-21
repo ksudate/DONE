@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  Include:
+    - rubocop-rails
+  Exclude:
+    - bin/*
+    - db/**/*
+    - config/**/*
+    - Gemfile
+    - vendor/**/*
+
+AsciiComments:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
