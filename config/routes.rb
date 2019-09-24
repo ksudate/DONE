@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
   get 'top_pages', to: 'top_pages#home'
-  post 'callback', to: 'linebot#callback'
+  get 'callback', to: 'linebot#callback'
+  post 'callback', to: 'linebot#webhook'
 end
