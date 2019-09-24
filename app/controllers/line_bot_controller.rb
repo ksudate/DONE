@@ -4,9 +4,9 @@ class LineBotController < ApplicationController
 
   def client
     @client ||= Line::Bot::Client.new { |config|
-      config.channel_id = Rails.application.credentials.linebot[:channel_id]
-      config.channel_secret = Rails.application.credentials.linebot[:channel_secret]
-      config.channel_token = Rails.application.credentials.linebot[:channel_token]
+      config.channel_id = Rails.application.credentials.bot[:channel_id]
+      config.channel_secret = Rails.application.credentials.bot[:channel_secret]
+      config.channel_token = Rails.application.credentials.bot[:channel_token]
     }
   end
 
