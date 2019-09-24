@@ -5,11 +5,3 @@ port        ENV.fetch("PORT") { 3000 }
 environment ENV.fetch("RAILS_ENV") { "development" }
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 plugin :tmp_restart
-
-if "development" == ENV.fetch("RAILS_ENV") { "development" }
-    ssl_bind '0.0.0.0', '9292', {
-      key: "config/server.key",
-      cert: "config/server.crt",
-      verify_mode: "none"
-    }
-end

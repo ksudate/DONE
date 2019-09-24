@@ -10,10 +10,6 @@
 /public/assets
 .byebug_history
 /config/master.key
-/config/server.crt
-/config/server.csr
-/config/server.key
-/config/database.yml
 /public/packs
 /public/packs-test
 /node_modules
