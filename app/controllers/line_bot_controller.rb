@@ -1,6 +1,5 @@
 class LineBotController < ApplicationController
   require 'line/bot'
-  protect_from_forgery :except => [:callback]
   def client
     @client ||= Line::Bot::Client.new { |config|
       config.channel_id = Rails.application.credentials.linebot[:channel_id]
@@ -11,7 +10,7 @@ class LineBotController < ApplicationController
 
   def callback
     body = request.body.read
-
+    
     signature = request.env['HTTP_X_LINE_SIGNATURE']
     unless client.validate_signature(body, signature)
       head 400
