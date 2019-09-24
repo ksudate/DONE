@@ -10,6 +10,9 @@
 /public/assets
 .byebug_history
 /config/master.key
+/config/server.crt
+/config/server.csr
+/config/server.key
 /config/database.yml
 /public/packs
 /public/packs-test
@@ -17,3 +20,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+/.circleci/*

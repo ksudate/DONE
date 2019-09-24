@@ -1,0 +1,4 @@
+<% @post.each do |p| %>
+  <%= link_to p.content, post_path(p.id) %>
+<% end %>
+<%= link_to '新規作成', new_post_path %>
