@@ -1,5 +1,6 @@
 class LineBotController < ApplicationController
   require 'line/bot'
+  protect_from_forgery :except => [:callback]
   def client
     @client ||= Line::Bot::Client.new { |config|
       config.channel_id = Rails.application.credentials.linebot[:channel_id]
