@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def index
     fetch_lineid
+    logger.debug(@line_id)
     @post = Post.where(line_id: @line_id)
   end
 
