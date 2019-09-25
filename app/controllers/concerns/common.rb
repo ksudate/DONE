@@ -39,10 +39,10 @@ module Common
     response = http.get(uri.path, headers)
     hash = JSON.parse(response.body)
     line_id = hash['userId']
+    logger.debug(line_id)
     if session[:line_id].nil? || session[:line_id] != line_id
       unless line_id.nil?
         session[:line_id] = line_id
-        @line_id = session[:line_id]
       end
     end
   end
