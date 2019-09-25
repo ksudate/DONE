@@ -53,8 +53,7 @@ class PostsController < ApplicationController
     headers = { 'Authorization' => "Bearer #{session[:access_token]}" }
     response = http.get(uri.path, headers)
     hash = JSON.parse(response.body)
-    logger.debug('####')
-    logger.debug(response.body)
+    logger.debug(session[:access_token])
     @line_id = hash['userId']
   end
 

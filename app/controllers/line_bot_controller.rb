@@ -54,5 +54,4 @@ class LineBotController < ApplicationController
     hash = JSON.parse(response.body)
     @line_id = hash['userId']
   end
-
 end
