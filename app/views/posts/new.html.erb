@@ -2,6 +2,6 @@
 
 <%= form_with model: @post, local: true do |form| %>
   <%= form.text_field :content %>
-  <%= form.hidden_field :line_id, :value => @line_id %>
+  <%= form.hidden_field :line_id, :value => session[:line_id] %>
   <%= form.submit '登録' %>
 <% end %>

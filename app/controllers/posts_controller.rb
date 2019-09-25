@@ -7,8 +7,8 @@ class PostsController < ApplicationController
   protect_from_forgery :except => [:index]
 
   def index
-    logger.debug(@line_id)
-    @post = Post.where(line_id: @line_id)
+    logger.debug('session[:line_id]:' + session[:line_id])
+    @post = Post.where(line_id: session[:line_id])
   end
 
   def show
