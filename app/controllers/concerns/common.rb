@@ -28,7 +28,9 @@ module Common
     hash = JSON.parse(response.body)
     access_token = hash['access_token']
     if session[:access_token].nil? || session[:access_token] != access_token
-      session[:access_token] = access_token
+      unless access_token.nil?
+        session[:access_token] = access_token
+      end
     end
     uri = URI.parse('https://api.line.me/v2/profile')
     http = Net::HTTP.new(uri.host, uri.port)
@@ -38,8 +40,10 @@ module Common
     hash = JSON.parse(response.body)
     line_id = hash['userId']
     if session[:line_id].nil? || session[:line_id] != line_id
-      session[:line_id] = line_id
+      unless line_id.nil?
+        session[:line_id] = line_id
+        @line_id = session[:line_id]
+      end
     end
-    @line_id = session[:line_id]
   end
 end
