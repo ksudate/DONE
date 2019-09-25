@@ -11,29 +11,28 @@ class LineBotController < ApplicationController
   end
 
   def callback
-    # body = request.body.read
+    body = request.body.read
 
-    # signature = request.env['HTTP_X_LINE_SIGNATURE']
-    # unless client.validate_signature(body, signature)
-    #   head :bad_request
-    # end
-
-    # events = client.parse_events_from(body)
-
-    # events.each do |event|
-    #   response = '今日のタスクは' + "\n"
-    #   case event
-    #   when Line::Bot::Event::Message
-    #     case event.type
-    #     when Line::Bot::Event::MessageType::Text
-    #       message = {
-    #         type: 'text',
-    #         text: response
-    #       }
-    #       client.reply_message(event['replyToken'], message)
-    #     end
-    #   end
-    # end
+    signature = request.env['HTTP_X_LINE_SIGNATURE']
+    unless client.validate_signature(body, signature)
+      head :bad_request
+    end
+    logger.debug(body)
+    events = client.parse_events_from(body)
+    events.each do |event|
+      response = '今日のタスクは' + "\n"
+      case event
+      when Line::Bot::Event::Message
+        case event.type
+        when Line::Bot::Event::MessageType::Text
+          message = {
+            type: 'text',
+            text: response
+          }
+          client.reply_message(event['replyToken'], message)
+        end
+      end
+    end
 
     head :ok
   end
