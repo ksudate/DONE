@@ -54,6 +54,8 @@ class PostsController < ApplicationController
     response = http.get(uri.path, headers)
     hash = JSON.parse(response.body)
     @line_id = hash['userId']
+    logger.debug("####")
+    logger.debug(@line_id)
   end
 
   def post_params
