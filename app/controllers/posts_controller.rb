@@ -28,8 +28,8 @@ class PostsController < ApplicationController
       flash.now[:danger] = 'ログインしてください。'
     else
       fetch_lineid
-      @post.create(post_params)
-      redirect_to '/posts'
+      Post.create(post_params)
+      redirect_to posts_path
     end
   end
 
