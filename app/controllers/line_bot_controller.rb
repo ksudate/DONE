@@ -19,10 +19,10 @@ class LineBotController < ApplicationController
     end
     # lineのidに基づいた投稿を取得
     events = client.parse_events_from(body)
-    user_id = events[0][:source]['userId']
+    # user_id = events[0][:source]['userId']
     events.each do |event|
       logger.debug('-----')
-      logger.debug(user_id)
+      logger.debug(event['source'])
       logger.debug('------')
       response = '今日のタスクは' + "\n"
       # post = Post.where(line_id: event.source['userId'])
