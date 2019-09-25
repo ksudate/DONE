@@ -22,15 +22,14 @@ class LineBotController < ApplicationController
     events.each do |event|
       logger.debug('-----')
       logger.debug(event)
-      logger.debug(event.source)
       logger.debug(event.message)
       logger.debug('------')
       response = '今日のタスクは' + "\n"
-      post = Post.where(line_id: event.source['userId'])
-      logger.debug(post)
-      post.each do |p|
-        response += p.content + "\n"
-      end
+      # post = Post.where(line_id: event.source['userId'])
+      # logger.debug(post)
+      # post.each do |p|
+      #   response += p.content + "\n"
+      # end
       case event
       when Line::Bot::Event::Message
         case event.type
