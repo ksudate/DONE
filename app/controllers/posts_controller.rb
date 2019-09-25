@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   before_action :fetch_lineid, only: [:index, :new, :edit]
 
   def index
+    fetch_lineid
     @post = Post.where(line_id: @line_id)
   end
 
