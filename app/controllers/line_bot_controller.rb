@@ -24,6 +24,10 @@ class LineBotController < ApplicationController
     events.each do |event|
       response = '今日のタスクは' + "\n"
       post = Post.where(line_id: @line_id)
+      logger.debug('####')
+      logger.debug(post)
+      logger.debug(@line_id)
+      logger.debug('####')
       post.each do |p|
         response += p.content + "\n"
       end
