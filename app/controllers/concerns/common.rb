@@ -40,5 +40,6 @@ module Common
     if session[:line_id].nil? || session[:line_id] != line_id
       session[:line_id] = line_id
     end
+    @line_id = session[:line_id]
   end
 end

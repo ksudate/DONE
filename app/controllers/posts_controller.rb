@@ -4,10 +4,11 @@ require 'json'
 class PostsController < ApplicationController
   include Common
   before_action :line_login, only: [:index]
+  protect_from_forgery :except => [:index]
 
   def index
-    logger.debug(session[:line_id])
-    @post = Post.where(line_id: session[:line_id])
+    logger.debug(@line_id)
+    @post = Post.where(line_id: @line_id)
   end
 
   def show
