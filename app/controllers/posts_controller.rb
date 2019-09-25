@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     else
       fetch_lineid
       Post.create(post_params)
-      redirect_to '/posts'
+      redirect_to action: 'index'
     end
   end
 
