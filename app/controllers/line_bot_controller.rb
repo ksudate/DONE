@@ -19,17 +19,14 @@ class LineBotController < ApplicationController
     end
     # lineのidに基づいた投稿を取得
     events = client.parse_events_from(body)
-    # user_id = events[0][:source]['userId']
     events.each do |event|
-      logger.debug('-----')
-      logger.debug(event['source'])
-      logger.debug('------')
+      user_id = event['source']['userId']
       response = '今日のタスクは' + "\n"
-      # post = Post.where(line_id: event.source['userId'])
-      # logger.debug(post)
-      # post.each do |p|
-      #   response += p.content + "\n"
-      # end
+      post = Post.where(line_id: user_id)
+      logger.debug(post)
+      post.each do |p|
+        response += p.content + "\n"
+      end
       case event
       when Line::Bot::Event::Message
         case event.type
