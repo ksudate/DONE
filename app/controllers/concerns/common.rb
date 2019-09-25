@@ -27,7 +27,6 @@ module Common
     response = http.request(req)
     hash = JSON.parse(response.body)
     access_token = hash['access_token']
-    session[:access_token] = nil
     if session[:access_token].nil?
       session[:access_token] = access_token
     end
