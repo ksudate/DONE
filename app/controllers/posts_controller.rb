@@ -55,7 +55,8 @@ class PostsController < ApplicationController
     hash = JSON.parse(response.body)
     @line_id = hash['userId']
     logger.debug("####")
-    logger.debug(@line_id)
+    logger.debug(session[:access_token])
+    logger.debug("####")
   end
 
   def post_params

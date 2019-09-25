@@ -8,6 +8,7 @@ module Common
 
   def line_login
     setup
+    logger.debug(@client_id)
     code = params[:code]
     uri = URI.parse('https://api.line.me/oauth2/v2.1/token')
     http = Net::HTTP.new(uri.host, uri.port)
