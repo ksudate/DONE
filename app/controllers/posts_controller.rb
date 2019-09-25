@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   before_action :line_login, only: [:index]
 
   def index
+    logger.debug(session[:line_id])
     @post = Post.where(line_id: session[:line_id])
   end
 
@@ -26,7 +27,6 @@ class PostsController < ApplicationController
       render template: 'top_pages/home'
       flash.now[:danger] = 'ログインしてください。'
     else
-      fetch_lineid
       Post.create(post_params)
       redirect_to posts_path
     end
