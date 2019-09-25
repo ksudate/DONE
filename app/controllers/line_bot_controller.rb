@@ -19,7 +19,7 @@ class LineBotController < ApplicationController
     end
     # lineのidに基づいた投稿を取得
     events = client.parse_events_from(body)
-    user_id = events[0].source.userId
+    user_id = events[0]
     events.each do |event|
       logger.debug('-----')
       logger.debug(user_id)
