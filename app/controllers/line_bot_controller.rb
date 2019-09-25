@@ -22,7 +22,7 @@ class LineBotController < ApplicationController
     events.each do |event|
       logger.debug('-----')
       logger.debug(event)
-      logger.debug(event.message)
+      logger.debug(event.source)
       logger.debug('------')
       response = '今日のタスクは' + "\n"
       # post = Post.where(line_id: event.source['userId'])
