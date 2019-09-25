@@ -30,5 +30,16 @@ module Common
     if session[:access_token].nil? || session[:access_token] != access_token
       session[:access_token] = access_token
     end
+    uri_id = URI.parse('https://api.line.me/v2/profile')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = uri.scheme === 'https'
+    headers = { 'Authorization' => "Bearer #{session[:access_token]}" }
+    response = http.get(uri.path, headers)
+    hash = JSON.parse(response.body)
+    logger.debug(session[:access_token])
+    line_id = hash['userId']
+    if session[:line_id].nil? || session[:line_id] != line_id
+      session[:line_id] = line_id
+    end
   end
 end

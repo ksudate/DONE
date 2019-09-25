@@ -1,7 +1,6 @@
 class LineBotController < ApplicationController
   require 'line/bot'
   protect_from_forgery :except => [:callback]
-  before_action :fetch_lineid, only: [:callback]
 
   def client
     @client ||= Line::Bot::Client.new { |config|
@@ -41,17 +40,5 @@ class LineBotController < ApplicationController
     end
 
     head :ok
-  end
-
-  private
-
-  def fetch_lineid
-    uri = URI.parse('https://api.line.me/v2/profile')
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = uri.scheme === 'https'
-    headers = { 'Authorization' => "Bearer #{session[:access_token]}" }
-    response = http.get(uri.path, headers)
-    hash = JSON.parse(response.body)
-    @line_id = hash['userId']
   end
 end
