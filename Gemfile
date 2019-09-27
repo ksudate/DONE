@@ -12,8 +12,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'line-bot-api'
-gem 'bootstrap', '~> 4.1.1'
-gem 'jquery-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
