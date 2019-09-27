@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   protect_from_forgery :except => [:index]
 
   def index
-    logger.debug('session[:line_id]:' + session[:line_id])
     @post = Post.where(line_id: session[:line_id])
   end
 
@@ -25,7 +24,7 @@ class PostsController < ApplicationController
 
   def create
     if session[:access_token].nil?
-      render template: 'top_pages/home'
+      render template: '/'
       flash.now[:danger] = 'ログインしてください。'
     else
       Post.create(post_params)
@@ -34,15 +33,16 @@ class PostsController < ApplicationController
   end
 
   def update
+    logger.debug("#########")
     post = Post.find(params[:id])
     post.update(post_params)
-    redirect_to '/posts'
+    redirect_to posts_path
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
-    redirect_to '/posts'
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private

@@ -16,10 +16,10 @@ class LineBotController < ApplicationController
     unless client.validate_signature(body, signature)
       head :bad_request
     end
-    # lineのidに基づいた投稿を取得
     events = client.parse_events_from(body)
     events.each do |event|
       user_id = event['source']['userId']
+      # request_message = event['message']['text']
       response = '今日のタスクは' + "\n"
       post = Post.where(line_id: user_id)
       logger.debug(post)

@@ -1,7 +1,11 @@
-<h1>Posts#new</h1>
-
-<%= form_with model: @post, local: true do |form| %>
-  <%= form.text_field :content %>
-  <%= form.hidden_field :line_id, :value => session[:line_id] %>
-  <%= form.submit '登録' %>
-<% end %>
+<div id="new">
+  <div id="new-div">
+    <div id="new-content">
+      <%= form_with model: @post, local: true do |form| %>
+        <%= form.text_field :content %>
+        <%= form.hidden_field :line_id, :value => session[:line_id] %>
+        <%= form.submit '登録' %>
+      <% end %>
+    </div>
+  </div>
+</div>

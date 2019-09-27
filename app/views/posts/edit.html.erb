@@ -1,8 +1,13 @@
-<p>編集</p>
-<%= @post.content %>
 
-<%= form_with model: @post, local: true do |form| %>
-  <%= form.text_field :content %>
-  <%= form.hidden_field :line_id, :value => session[:line_id] %>
-  <%= form.submit '更新' %>
-<% end %>
+
+<div id="edit">
+  <div id="edit-div">
+    <div id="edit-content">
+      <%= form_with model: @post, local: true do |form| %>
+        <%= form.text_field :content %>
+        <%= form.hidden_field :line_id, :value => session[:line_id] %>
+        <%= form.submit '更新' %>
+      <% end %>
+    </div>
+  </div>
+</div>
