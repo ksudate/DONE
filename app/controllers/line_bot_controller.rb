@@ -21,15 +21,15 @@ class LineBotController < ApplicationController
       user_id = event['source']['userId']
       request_message = event['message']['text']
       post = Post.where(line_id: user_id)
-      response = 'タスクが知りたい場合は「タスク」、タスクを追加したい場合は「タスク追加：タスクに登録する内容」の形式で入力してね！'
+      response = 'タスクが知りたい場合は「タスク」、タスクを追加したい場合は「タスク追加#タスクに登録する内容」の形式で入力してね！'
       if request_message == 'タスク'
         response = '今日のタスクは' + "\n"
         post.each do |p|
           response += p.content + "\n"
         end
       elsif request_message.include?('タスク追加')
-        content = request_message.delete('タスク追加：')
-        Post.create(content: content, line_id: user_id)
+        content = request_message.split('#')
+        Post.create(content: content[1], line_id: user_id)
         response = 'タスクに登録したよ！'
       end
       case event
