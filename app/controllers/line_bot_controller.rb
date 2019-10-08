@@ -20,7 +20,7 @@ class LineBotController < ApplicationController
     events.each do |event|
       user_id = event['source']['userId']
       # request_message = event['message']['text']
-      response = '今日のタスクは' + "\n"
+      response = event.message['text'] + ':今日のタスクは' + "\n"
       post = Post.where(line_id: user_id)
       logger.debug(post)
       post.each do |p|

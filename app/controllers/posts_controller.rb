@@ -33,7 +33,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    logger.debug("#########")
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to posts_path
