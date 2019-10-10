@@ -3,7 +3,7 @@ jobs:
   build:
     parallelism: 3 
     docker:
-      - image: circleci/ruby:2.6-jessie-node 
+      - image: circleci/ruby:2.6-stretch-node-browsers-legacy
 
     steps:
       - checkout
