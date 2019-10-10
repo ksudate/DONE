@@ -4,6 +4,7 @@ jobs:
    machine:
     image: circleci/classic:latest
   steps:
+   - checkout
    - run:
       name: rubocop
       command: bundle exec rubocop
