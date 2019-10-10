@@ -28,6 +28,7 @@ class LineBotController < ApplicationController
         post.each do |p|
           response += p.content + "\n"
         end
+        response = response.chomp
       elsif request_message.include?('タスク追加')
         content = request_message.split('#')
         Post.create(content: content[1], line_id: user_id)
