@@ -1,10 +1,15 @@
 version: 2
 jobs:
-  build:
+  rubocop:
    machine:
     image: circleci/classic:latest
   steps:
     - run:
       name: Test
       command: rubocop
+workflows:
+  version: 2
+  fuga:
+    jobs:
+      - rubocop
 
