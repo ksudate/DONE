@@ -2,11 +2,11 @@
   <div id="show-div">
     <div id="show-content">
         <p>タスク詳細</p>
-        <%= @post.content %>
+        <p id="show-p"><%= @post.content %></p>
         <div id="link-list">
-            <%= link_to '編集', edit_post_path(@post.id), id: 'edit-link' %>
-            <%= button_to '削除', post_path(@post.id), method: :delete, id: 'delete-link' %>
-            <%= link_to 'タスク一覧へ', posts_path, id: 'postlist-link' %>
+            <div class="link-div"><%= link_to '編集', edit_post_path(@post.id), id: 'edit-link' %></div>
+            <div class="link-div"><%= button_to '削除', post_path(@post.id), method: :delete, id: 'delete-link' %></div>
+            <div class="link-div"><%= link_to 'タスク一覧へ', posts_path, id: 'postlist-link' %></div>
         </div>
     </div>
   </div>

@@ -4,7 +4,9 @@
       <%= form_with model: @post, local: true, id: 'edit-form' do |form| %>
         <%= form.text_field :content %>
         <%= form.hidden_field :line_id, :value => session[:line_id] %>
-        <%= form.submit '更新' %>
+        <div id="submit">
+          <%= form.submit '更新' %>
+        </div>
       <% end %>
     </div>
   </div>

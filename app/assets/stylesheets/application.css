@@ -13,7 +13,8 @@
  #header {
     width: 100vw;
     height: 7vh;
-    background: linear-gradient(-35deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8));
+    /* background: linear-gradient(-35deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8)); */
+    background-color: #00a1e9;
     position: fixed;
     display: flex;
 }

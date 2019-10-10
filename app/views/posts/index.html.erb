@@ -1,8 +1,8 @@
 <div id="post">
   <div id="post-div">
     <div id="post-link">
-      <%= link_to '新規作成', new_post_path, id: 'new-link' %>
       <p>タスク一覧</p>
+      <%= link_to '新規作成', new_post_path, id: 'new-link' %>
     </div>
       <% @post.each do |p| %>
         <p><%= link_to p.content, post_path(p.id), class: 'post-p' %></p>

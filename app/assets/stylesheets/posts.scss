@@ -1,13 +1,14 @@
 #post {
+    text-align: center;
     width: 100vw;
     #post-div {
+        
         padding-top: 10vh;
-        padding-left: 10vw; 
         #post-link {
             p {
                 margin-top: 5vh;
                 font-weight: bold;
-                font-size: 1.5em;
+                font-size: 3em;
                 color: #414141;
             }
             #new-link {
@@ -43,22 +44,56 @@
 }
 
 #new {
+    text-align: center;
     width: 100vw;
     #new-div {
-        padding-top: 10vh;
+        padding-top: 15vh;
         #new-content {
+            #new-form {
+                input[type='text']{
+                    width: 30vw;
+                    height: 4vh;
+                }
+                input[type='submit']{
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 1em;
+                    background: #00BE00;
+                    color:white;
+                    border-radius: 1em;
+                    padding:0.7em 2em;
+                }
+                #submit {
+                    padding-top: 3vh;
+                }
+            }
         }
     }
 }
 
 #edit {
+    text-align: center;
     width: 100vw;
     #edit-div {
         padding-top: 10vh;
         #edit-content {
-            text-align: center;
             #edit-form {
-                width: 30vw;
+                input[type='text']{
+                    width: 30vw;
+                    height: 4vh;
+                }
+                input[type='submit']{
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 1em;
+                    background: #00BE00;
+                    color:white;
+                    border-radius: 1em;
+                    padding:0.7em 2em;
+                }
+                #submit {
+                    padding-top: 3vh;
+                }
             }
         }
     }
@@ -66,12 +101,52 @@
 
 #show {
     width: 100vw;
+    text-align: center;
+    padding-top: 5vh;
     #show-div {
-        padding-top: 10vh;
-        #new-content {
+        #show-content{
+            p {
+                font-size: 3em;
+                font-weight: 600;
+            }
+            #show-p {
+                font-weight: 300;
+            }
             #link-list{
-                display: flex;
+                padding-top: 3vh;
+                .link-div {
+                    display: inline-block;
+                }
+                #edit-link {
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 1em;
+                    background: #00BE00;
+                    color:white;
+                    border-radius: 0.5em;
+                    padding:0.7em 2em;
+                }
+                #delete-link {
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 1em;
+                    background: #b22222;
+                    color:white;
+                    border-radius: 0.5em;
+                    padding:0.5em 2em;
+                }
+                #postlist-link {
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 1em;
+                    background: #0000ff;
+                    color:white;
+                    border-radius: 0.5em;
+                    padding:0.7em 2em;
+                }
             }
         }
+        padding-top: 10vh;
+            
     }
 }
