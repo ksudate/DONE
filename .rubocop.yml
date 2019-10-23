@@ -1,19 +1,36 @@
+require:
+  - rubocop-rails
+
 AllCops:
-  TargetRubyVersion: 2.6
-  Include:
-    - rubocop-rails
+  TargetRubyVersion: 2.6.0
   Exclude:
     - bin/*
     - db/**/*
     - config/**/*
     - Gemfile
     - vendor/**/*
+    - node_modules/**/*
 
 AsciiComments:
   Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/LineLength:
+  Max: 100
 
 Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+ClassAndModuleChildren:
   Enabled: false

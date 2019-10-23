@@ -42,7 +42,7 @@ jobs:
 
       - run:
           name: Run Rubocop
-          command: bundle exec rubocop
+          command: bundle exec rubocop --require rubocop-rails -a
 
       - store_test_results:
           path: test_results

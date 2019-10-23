@@ -10,8 +10,12 @@
 
   <body>
     <div id="header">
-    <div><a href="/"><p>DONE</p></a></div>
-  </div>
+      <div><a href="/"><p>DONE</p></a></div>
+      <% if session[:access_token] %>
+        <div><%= link_to 'ログアウト', logout_path %></div>
+      <% end %>
+      <div><%= link_to 'ホーム', posts_path %></div>
+    </div>
     <%= yield %>
   </body>
 </html>
