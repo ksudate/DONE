@@ -8,10 +8,6 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Which bundler?
-          command: bundle -v
-
       - restore_cache:
           keys:
             - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
@@ -41,7 +37,7 @@ jobs:
             - ~/.cache/yarn
 
       - run:
-          name: Run Rubocop
+          name: Rubocop の 実行
           command: bundle exec rubocop --require rubocop-rails -a
 
       - store_test_results:

@@ -35,3 +35,16 @@
     line-height: 7vh;
     font-weight: 100;
 }
+
+#header-right {
+    display: flex;
+    margin-left: auto;
+}
+
+#header-right .header-link{
+    color: #ffffff;
+    font-size: 1.5em;
+    line-height: 7vh;
+    font-weight: 100;
+    padding-right: 2vw;
+}

@@ -2,8 +2,50 @@
     text-align: center;
     width: 100vw;
     #post-div {
+
+    table{
+        margin: auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 70vw;
+    }
+    
+    table tr{
+        border-bottom: solid 1px #eee;
+        cursor: pointer;
+    }
+    
+    table tr:hover{
+        background-color: #d4f0fd;
+    }
+
+    table th{
+        font-weight: 100;
+        color: #414141;
+        font-size: 1.8em;
+    }
+
+    table td{
+        color: #414141;
+        font-size: 1.5em;
+        .post-a {
+            text-decoration: none;
+            div {
+                color: #414141;
+            }
+        }
+    }
+    
+    table th,table td{
+        text-align: center;
+        width: 25vw;
+        padding: 3vh 0;
+    }
         padding-top: 10vh;
         #post-link {
+            #menu-bar{
+                display: flex;
+            }
             p {
                 margin-top: 5vh;
                 font-weight: bold;

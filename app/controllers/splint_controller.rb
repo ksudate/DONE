@@ -1,0 +1,2 @@
+class SplintController < ApplicationController
+end

@@ -4,7 +4,6 @@ require 'json'
 class PostsController < ApplicationController
   include Common
   before_action :line_login, only: [:index]
-  # protect_from_forgery :except => [:index]
 
   def index
     @post = Post.where(line_id: session[:line_id])
@@ -47,6 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :line_id)
+    params.require(:post).permit(:content, :line_id, :rank, :deadline)
   end
 end
