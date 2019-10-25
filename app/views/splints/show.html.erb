@@ -1,13 +1,11 @@
 <div id="show">
-  <div id="show-div">
-    <div id="show-content">
-        <p>詳細</p>
-        <p id="show-p"><%= @splint.content %></p>
-        <div id="link-list">
-            <div class="link-div"><%= link_to '編集', edit_splint_path(@splint.id), id: 'edit-link' %></div>
-            <div class="link-div"><%= button_to '削除', splint_path(@splint.id), method: :delete, id: 'delete-link' %></div>
-            <div class="link-div"><%= link_to 'タスク一覧へ', splints_path, id: 'postlist-link' %></div>
-        </div>
+  <div id="show-content">
+    <p id="detail">DETAIL</p>
+    <p id="show-p"><%= @splint.content %></p>
+    <div id="link-list">
+      <%= link_to 'Edit', edit_splint_path(@splint.id), id: 'edit-link' %>
+      <%= button_to 'Delete', splint_path(@splint.id), method: :delete, id: 'delete-link' %>
+      <%= link_to 'Task List', splints_path, id: 'postlist-link' %>
     </div>
   </div>
 </div>

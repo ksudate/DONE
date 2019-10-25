@@ -1,13 +1,11 @@
 <div id="show">
-  <div id="show-div">
-    <div id="show-content">
-        <p>タスク詳細</p>
-        <p id="show-p"><%= @post.content %></p>
-        <div id="link-list">
-            <div class="link-div"><%= link_to '編集', edit_post_path(@post.id), id: 'edit-link' %></div>
-            <div class="link-div"><%= button_to '削除', post_path(@post.id), method: :delete, id: 'delete-link' %></div>
-            <div class="link-div"><%= link_to 'タスク一覧へ', posts_path, id: 'postlist-link' %></div>
-        </div>
+  <div id="show-content">
+    <p id="detail">DETAIL</p>
+    <p id="show-p"><%= @post.content %></p>
+    <div id="link-list">
+      <%= link_to 'Update', edit_post_path(@post.id), id: 'edit-link' %>
+      <%= button_to 'Delete', post_path(@post.id), method: :delete, id: 'delete-link' %>
+      <%= link_to 'Task List', posts_path, id: 'postlist-link' %>
     </div>
   </div>
 </div>

@@ -1,15 +1,13 @@
-<div id="new">
-  <div id="new-div">
-    <div id="new-content">
-      <%= form_with model: @splint, local: true, id: 'new-form' do |form| %>
-        <div>
-          <%= form.text_field :content %>
-        </div>
-        <div>
-          <%= form.hidden_field :line_id, :value => session[:line_id] %>
-        </div>
-        <%= form.submit '更新' %>
-      <% end %>
-    </div>
+<div id="edit">
+  <div id="edit-content">
+    <%= form_with model: @splint, local: true, id: 'edit-form' do |form| %>
+      <div>
+        <%= form.text_field :content %>
+      </div>
+      <div>
+        <%= form.hidden_field :line_id, :value => session[:line_id] %>
+      </div>
+      <%= form.submit 'Update' %>
+    <% end %>
   </div>
 </div>

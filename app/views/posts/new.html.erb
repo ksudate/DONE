@@ -1,22 +1,20 @@
 <div id="new">
-  <div id="new-div">
-    <div id="new-content">
-      <%= form_with model: @post, local: true, id: 'new-form' do |form| %>
-        <div>
-          <%= form.text_field :content %>
-        </div>
-        <div>
-          <%= form.radio_button(:rank, "高") %>
-          <%= form.label(:rank, "高") %>
-          <%= form.radio_button(:rank, "低") %>
-          <%= form.label(:rank, "低") %>
-        </div>
-        <div>
-          <%= form.date_select :deadline %>
-          <%= form.hidden_field :line_id, :value => session[:line_id] %>
-        </div>
-        <%= form.submit '登録' %>
-      <% end %>
-    </div>
+  <div id="new-content">
+    <%= form_with model: @post, local: true, id: 'new-form' do |form| %>
+      <div>
+        <%= form.text_field :content %>
+      </div>
+      <div>
+        <%= form.radio_button(:rank, "High") %>
+        <%= form.label(:rank, "High") %>
+        <%= form.radio_button(:rank, "Low") %>
+        <%= form.label(:rank, "Low") %>
+      </div>
+      <div>
+        <%= form.date_select :deadline %>
+        <%= form.hidden_field :line_id, :value => session[:line_id] %>
+      </div>
+      <%= form.submit 'Add' %>
+    <% end %>
   </div>
 </div>

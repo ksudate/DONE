@@ -5,19 +5,10 @@
         <div>
           <%= form.text_field :content %>
         </div>
-        <div>
-          <%= form.radio_button(:kpt, "Keep") %>
-          <%= form.label(:kpt, "Keep") %>
-          <%= form.radio_button(:kpt, "Problem") %>
-          <%= form.label(:kpt, "Problem") %>
-          <%= form.radio_button(:kpt, "Try") %>
-          <%= form.label(:kpt, "Try") %>
-        </div>
-        <div>
-          <%= form.hidden_field :line_id, :value => session[:line_id] %>
-          <%= form.hidden_field :sp_number, :value => @sp_number %>
-        </div>
-        <%= form.submit '登録' %>
+        <%= form.hidden_field :line_id, :value => session[:line_id] %>
+        <%= form.hidden_field :sp_number, :value => @sp_number %>
+        <%= form.hidden_field :kpt, :value => params[:kpt] %>
+        <%= form.submit 'Add' %>
       <% end %>
     </div>
   </div>

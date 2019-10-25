@@ -3,8 +3,8 @@
   <% if session[:access_token] %>
     <div><%= render 'shared/menubar' %></div>
     <div id="header-right">
-    <%= link_to 'ログアウト', logout_path, class: "header-link" %>
-    <%= link_to 'ホーム', posts_path, class: "header-link" %>
+    <%= link_to 'Logout', logout_path, class: "header-link" %>
+    <%= link_to 'Home', posts_path, class: "header-link" %>
     </div>
   <% end %>
 </div>
