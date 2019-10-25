@@ -17,6 +17,7 @@ class SplintsController < ApplicationController
     
     def new
       @splint = Splint.new
+      @sp_number = params[:sp_number]
     end
 
     def edit
@@ -48,7 +49,7 @@ class SplintsController < ApplicationController
     private
     
     def splint_params
-      params.require(:splint).permit(:content, :line_id, :kpt)
+      params.require(:splint).permit(:content, :line_id, :kpt, :sp_number)
     end
 
     def splint_edit_params

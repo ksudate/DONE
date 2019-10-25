@@ -1,0 +1,15 @@
+<div>
+  <table>
+    <tr>
+      <th>Problem</th>
+    </tr>
+    <% problem.each do |pb| %>
+      <tr>
+        <td>
+          <a href="/splints/<%=pb.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: pb.content }) %></a>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="new-link-div"><%= link_to '+', new_splint_path(sp_number: sp_number), id: 'new-link' %></div>
+</div>

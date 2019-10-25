@@ -1,0 +1,13 @@
+<div>
+  <table>
+    <tr>
+      <th>Try</th>
+    </tr>
+    <% try.each do |ty| %>
+      <tr>
+        <td><a href="/splints/<%=ty.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: ty.content }) %></a></td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="new-link-div"><%= link_to '+', new_splint_path(sp_number: sp_number), id: 'new-link' %></div>
+</div>

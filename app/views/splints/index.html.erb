@@ -10,45 +10,9 @@
         <input type="checkbox" id="label1"/>
         <div class="hidden_show">
           <div id="kpt-table">
-            <div>
-              <table>
-                <tr>
-                  <th>Keep</th>
-                </tr>
-                <% @keep.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Problem</th>
-                </tr>
-                <% @problem.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Try</th>
-                </tr>
-                <% @try.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
+            <%= render 'keep_table', {keep: @keep, sp_number: 1} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 1} %>
+            <%= render 'try_table', {try: @try, sp_number: 1} %>
           </div>
         </div>
       </div>
@@ -58,45 +22,9 @@
         <input type="checkbox" id="label2"/>
         <div class="hidden_show">
           <div id="kpt-table">
-            <div>
-              <table>
-                <tr>
-                  <th>Keep</th>
-                </tr>
-                <% @keep.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Problem</th>
-                </tr>
-                <% @problem.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Try</th>
-                </tr>
-                <% @try.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
+            <%= render 'keep_table', {keep: @keep, sp_number: 2} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 2} %>
+            <%= render 'try_table', {try: @try, sp_number: 2} %>
           </div>
         </div>
       </div>
@@ -106,45 +34,9 @@
         <input type="checkbox" id="label3"/>
         <div class="hidden_show">
           <div id="kpt-table">
-            <div>
-              <table>
-                <tr>
-                  <th>Keep</th>
-                </tr>
-                <% @keep.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Problem</th>
-                </tr>
-                <% @problem.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Try</th>
-                </tr>
-                <% @try.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
+            <%= render 'keep_table', {keep: @keep, sp_number: 3} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 3} %>
+            <%= render 'try_table', {try: @try, sp_number: 3} %>
           </div>
         </div>
       </div>
@@ -154,45 +46,9 @@
         <input type="checkbox" id="label4"/>
         <div class="hidden_show">
           <div id="kpt-table">
-            <div>
-              <table>
-                <tr>
-                  <th>Keep</th>
-                </tr>
-                <% @keep.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Problem</th>
-                </tr>
-                <% @problem.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Try</th>
-                </tr>
-                <% @try.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
+            <%= render 'keep_table', {keep: @keep, sp_number: 4} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 4} %>
+            <%= render 'try_table', {try: @try, sp_number: 4} %>
           </div>
         </div>
       </div>
@@ -202,45 +58,9 @@
         <input type="checkbox" id="label5"/>
         <div class="hidden_show">
           <div id="kpt-table">
-            <div>
-              <table>
-                <tr>
-                  <th>Keep</th>
-                </tr>
-                <% @keep.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Problem</th>
-                </tr>
-                <% @problem.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Try</th>
-                </tr>
-                <% @try.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
+            <%= render 'keep_table', {keep: @keep, sp_number: 5} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 5} %>
+            <%= render 'try_table', {try: @try, sp_number: 5} %>
           </div>
         </div>
       </div>
@@ -250,48 +70,62 @@
         <input type="checkbox" id="label6"/>
         <div class="hidden_show">
           <div id="kpt-table">
-            <div>
-              <table>
-                <tr>
-                  <th>Keep</th>
-                </tr>
-                <% @keep.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Problem</th>
-                </tr>
-                <% @problem.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
-            <div>
-              <table>
-                <tr>
-                  <th>Try</th>
-                </tr>
-                <% @try.each do |p| %>
-                  <tr>
-                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-                  </tr>
-                <% end %>
-              </table>
-              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
-            </div>
+            <%= render 'keep_table', {keep: @keep, sp_number: 6} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 6} %>
+            <%= render 'try_table', {try: @try, sp_number: 6} %>
           </div>
         </div>
       </div>
+
+      <div class="hidden_box">
+        <label for="label7">Splint.7</label>
+        <input type="checkbox" id="label7"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <%= render 'keep_table', {keep: @keep, sp_number: 7} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 7} %>
+            <%= render 'try_table', {try: @try, sp_number: 7} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label8">Splint.8</label>
+        <input type="checkbox" id="label8"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <%= render 'keep_table', {keep: @keep, sp_number: 8} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 8} %>
+            <%= render 'try_table', {try: @try, sp_number: 8} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label9">Splint.9</label>
+        <input type="checkbox" id="label9"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <%= render 'keep_table', {keep: @keep, sp_number: 9} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 9} %>
+            <%= render 'try_table', {try: @try, sp_number: 9} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label10">Splint.10</label>
+        <input type="checkbox" id="label10"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <%= render 'keep_table', {keep: @keep, sp_number: 10} %>
+            <%= render 'problem_table', {problem: @problem, sp_number: 10} %>
+            <%= render 'try_table', {try: @try, sp_number: 10} %>
+          </div>
+        </div>
+      </div>
+
+
 
     </div>
   </div>

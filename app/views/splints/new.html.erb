@@ -15,6 +15,7 @@
         </div>
         <div>
           <%= form.hidden_field :line_id, :value => session[:line_id] %>
+          <%= form.hidden_field :sp_number, :value => @sp_number %>
         </div>
         <%= form.submit '登録' %>
       <% end %>
