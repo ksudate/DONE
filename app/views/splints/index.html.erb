@@ -1,0 +1,300 @@
+<% if session[:access_token] %>
+  <div id="splint">
+    <div id="splint-div">
+      <div id="splint-link">
+        <p>KPT</p>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label1">Splint.1</label>
+        <input type="checkbox" id="label1"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <div>
+              <table>
+                <tr>
+                  <th>Keep</th>
+                </tr>
+                <% @keep.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Problem</th>
+                </tr>
+                <% @problem.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Try</th>
+                </tr>
+                <% @try.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label2">Splint.2</label>
+        <input type="checkbox" id="label2"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <div>
+              <table>
+                <tr>
+                  <th>Keep</th>
+                </tr>
+                <% @keep.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Problem</th>
+                </tr>
+                <% @problem.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Try</th>
+                </tr>
+                <% @try.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label3">Splint.3</label>
+        <input type="checkbox" id="label3"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <div>
+              <table>
+                <tr>
+                  <th>Keep</th>
+                </tr>
+                <% @keep.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Problem</th>
+                </tr>
+                <% @problem.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Try</th>
+                </tr>
+                <% @try.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label4">Splint.4</label>
+        <input type="checkbox" id="label4"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <div>
+              <table>
+                <tr>
+                  <th>Keep</th>
+                </tr>
+                <% @keep.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Problem</th>
+                </tr>
+                <% @problem.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Try</th>
+                </tr>
+                <% @try.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label5">Splint.5</label>
+        <input type="checkbox" id="label5"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <div>
+              <table>
+                <tr>
+                  <th>Keep</th>
+                </tr>
+                <% @keep.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Problem</th>
+                </tr>
+                <% @problem.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Try</th>
+                </tr>
+                <% @try.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden_box">
+        <label for="label6">Splint.6</label>
+        <input type="checkbox" id="label6"/>
+        <div class="hidden_show">
+          <div id="kpt-table">
+            <div>
+              <table>
+                <tr>
+                  <th>Keep</th>
+                </tr>
+                <% @keep.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Problem</th>
+                </tr>
+                <% @problem.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+            <div>
+              <table>
+                <tr>
+                  <th>Try</th>
+                </tr>
+                <% @try.each do |p| %>
+                  <tr>
+                    <td><a href="/splints/<%=p.id%>" class="splint-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="new-link-div"><%= link_to '+', new_splint_path, id: 'new-link' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% else %>
+  <%= render 'shared/unauthorized' %>
+<% end %>

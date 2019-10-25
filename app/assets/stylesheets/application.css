@@ -13,8 +13,7 @@
  #header {
     width: 100vw;
     height: 7vh;
-    /* background: linear-gradient(-35deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8)); */
-    background-color: #00a1e9;
+    border-bottom: 1px solid #f5f5f5 ;
     position: fixed;
     display: flex;
 }
@@ -24,16 +23,15 @@
 }
 
 #header a:hover {
-    text-decoration: underline;
-    color: #ffffff;
+    color: #8e8eff;
 }
 
 #header p{
     padding-left: 5vw;
-    color: #ffffff;
+    color: #00a1e9;
     font-size: 2em;
     line-height: 7vh;
-    font-weight: 100;
+    font-weight: 600;
 }
 
 #header-right {
@@ -42,9 +40,21 @@
 }
 
 #header-right .header-link{
-    color: #ffffff;
+    color: #696969;
     font-size: 1.5em;
     line-height: 7vh;
     font-weight: 100;
     padding-right: 2vw;
+}
+
+#menu-bar {
+    display: flex;
+}
+
+.menu-btn {
+    line-height: 7vh;
+    font-weight: 100;
+    font-size: 1.7em;
+    color: #AFB4BA;
+    padding-left: 5vw;
 }

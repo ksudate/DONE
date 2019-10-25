@@ -2,12 +2,7 @@
   <div id="post">
     <div id="post-div">
       <div id="post-link">
-        <div id="menu-bar">
-          <%= link_to "タスク", posts_path, remote: true %>
-          <%= link_to "KPT", "/", remote: true %>
-        </div>
-        <p>タスク一覧</p>
-        <%= link_to '新規作成', new_post_path, id: 'new-link' %>
+        <p>TASK LIST</p>
       </div>
       <table>
         <tr>
@@ -23,12 +18,9 @@
         </tr>
       <% end %>
       </table>
+      <div class="new-link-div"><%= link_to '+', new_post_path, id: 'new-link' %></div>
     </div>
   </div>
 <% else %>
-  <div id="post">
-    <div id="post-div">
-      <p>ログインしてください</p>
-    </div>
-  </div>
+  <%= render 'shared/unauthorized' %>
 <% end %>

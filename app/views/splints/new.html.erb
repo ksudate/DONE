@@ -1,0 +1,23 @@
+<div id="new">
+  <div id="new-div">
+    <div id="new-content">
+      <%= form_with model: @splint, local: true, id: 'new-form' do |form| %>
+        <div>
+          <%= form.text_field :content %>
+        </div>
+        <div>
+          <%= form.radio_button(:kpt, "Keep") %>
+          <%= form.label(:kpt, "Keep") %>
+          <%= form.radio_button(:kpt, "Problem") %>
+          <%= form.label(:kpt, "Problem") %>
+          <%= form.radio_button(:kpt, "Try") %>
+          <%= form.label(:kpt, "Try") %>
+        </div>
+        <div>
+          <%= form.hidden_field :line_id, :value => session[:line_id] %>
+        </div>
+        <%= form.submit '登録' %>
+      <% end %>
+    </div>
+  </div>
+</div>

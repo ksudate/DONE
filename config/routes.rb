@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'top_pages#logout'
   post 'callback', to: 'line_bot#callback'
   resources :posts
+  resources :splints
 end

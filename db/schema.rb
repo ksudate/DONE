@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_065011) do
+ActiveRecord::Schema.define(version: 2019_10_24_120837) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "line_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_10_24_065011) do
     t.integer "sp_number"
     t.string "content"
     t.string "kpt"
-    t.integer "line_id"
+    t.string "line_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

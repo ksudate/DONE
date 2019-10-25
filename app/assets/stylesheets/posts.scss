@@ -2,85 +2,65 @@
     text-align: center;
     width: 100vw;
     #post-div {
-
-    table{
-        margin: auto;
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 70vw;
-    }
-    
-    table tr{
-        border-bottom: solid 1px #eee;
-        cursor: pointer;
-    }
-    
-    table tr:hover{
-        background-color: #d4f0fd;
-    }
-
-    table th{
-        font-weight: 100;
-        color: #414141;
-        font-size: 1.8em;
-    }
-
-    table td{
-        color: #414141;
-        font-size: 1.5em;
-        .post-a {
+        .new-link-div {
+            margin-top: 2vh;
+        }
+        #new-link {
+            font-weight: 100;
             text-decoration: none;
-            div {
-                color: #414141;
+            font-size: 3em;
+            color: #d3d3d3;
+        }
+        #new-link:hover {
+            color: #8e8eff;
+        }
+        table{
+            margin: auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 70vw;
+        }
+        table tr{
+            border-bottom: solid 1px #eee;
+            cursor: pointer;
+        }
+        table tr:hover{
+            background-color: #d4f0fd;
+        }
+        table th{
+            font-weight: 100;
+            color: #414141;
+            font-size: 1.8em;
+        }
+        table td{
+            color: #414141;
+            font-size: 1.5em;
+            .post-a {
+                text-decoration: none;
+                div {
+                    color: #414141;
+                }
             }
         }
-    }
-    
-    table th,table td{
-        text-align: center;
-        width: 25vw;
-        padding: 3vh 0;
-    }
+        table th,table td{
+            text-align: center;
+            width: 25vw;
+            padding: 3vh 0;
+        }
         padding-top: 10vh;
         #post-link {
-            #menu-bar{
-                display: flex;
-            }
             p {
                 margin-top: 5vh;
-                font-weight: bold;
+                font-weight: 100;
                 font-size: 3em;
                 color: #414141;
-            }
-            #new-link {
-                font-weight: bold;
-                text-decoration: none;
-                font-size: 1.5em;
-                background: #00BE00;
-                color:white;
-                border-radius: 0.7em;
-                padding:0.7em 1.5em;
-                transition: 0.6s;
-            }
-            #new-link:hover {
-                background: #90ee90;
-                text-decoration: none;
+                letter-spacing: 0.5em;
             }
             margin-bottom: 10vh;
         }
         p {
             margin-bottom: 3vh;
         }
-        .post-p {
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1.5em;
-            color: #414141;
-        }
-        .post-p:hover {
-            text-decoration: underline;
-        }
-
     }
 }
 

@@ -1,3 +1,97 @@
-// Place all the styles related to the splint controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#splint {
+    text-align: center;
+    width: 100vw;
+    #splint-div {
+        #kpt-table{
+            display: flex;
+            justify-content: center;
+            .new-link-div {
+                margin-top: 2vh;
+            }
+            #new-link {
+                font-weight: 100;
+                text-decoration: none;
+                font-size: 3em;
+                color: #d3d3d3;
+            }
+            #new-link:hover {
+                color: #8e8eff;
+            }
+        }
+        div {
+            margin: 0 2em;
+        }
+        table{
+            margin: auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 25vw;
+            tr{
+                border-bottom: solid 1px #eee;
+                cursor: pointer;
+            }
+            th{
+                font-weight: 100;
+                color: #414141;
+                font-size: 1.8em;
+            }
+            td{
+                color: #414141;
+                font-size: 1.5em;
+                .splint-a {
+                    text-decoration: none;
+                    div {
+                        color: #414141;
+                    }
+                }
+            }
+            td:hover{
+                background-color: #d4f0fd;
+            }
+            th, td{
+                text-align: center;
+                width: 25vw;
+                padding: 3vh 0;
+            }
+        }
+        padding-top: 10vh;
+        #splint-link {
+            p {
+                margin-top: 5vh;
+                font-weight: 100;
+                font-size: 3em;
+                color: #414141;
+                letter-spacing: 0.5em;
+            }
+            margin-bottom: 10vh;
+        }
+        label {
+            font-size: 1.5em;
+            letter-spacing: 0.2em;
+            margin-bottom: 4vh;
+        }
+
+        label:hover {
+            color: #8e8eff;
+        }
+
+        .hidden_box {
+            margin-bottom: 5vh;
+        }
+
+        .hidden_box input {
+            display: none;
+        }
+        .hidden_box .hidden_show {
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: 0.8s;
+        }
+        .hidden_box input:checked ~ .hidden_show {
+            height: auto;
+            opacity: 1;
+        }
+    }
+}

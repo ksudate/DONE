@@ -2,11 +2,20 @@
   <div id="edit-div">
     <div id="edit-content">
       <%= form_with model: @post, local: true, id: 'edit-form' do |form| %>
-        <%= form.text_field :content %>
-        <%= form.hidden_field :line_id, :value => session[:line_id] %>
-        <div id="submit">
-          <%= form.submit '更新' %>
+        <div>
+          <%= form.text_field :content %>
         </div>
+        <div>
+          <%= form.radio_button(:rank, "高") %>
+          <%= form.label(:rank, "高") %>
+          <%= form.radio_button(:rank, "低") %>
+          <%= form.label(:rank, "低") %>
+        </div>
+        <div>
+          <%= form.date_select :deadline %>
+          <%= form.hidden_field :line_id, :value => session[:line_id] %>
+        </div>
+        <%= form.submit '更新' %>
       <% end %>
     </div>
   </div>
