@@ -69,6 +69,29 @@
   width: 100vw;
   padding-top: 15vh;
   #new-content {
+    #radio-btn{
+      margin-top: 2vh;
+      #high {
+        margin: 1.5em;
+        width: 1.5em;
+        height: 1.5em;
+      }
+      .high {
+        font-size: 1.5em;
+      }
+      #low {
+        margin: 1.5em;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 0;
+      }
+      .low {
+        font-size: 1.5em;
+      }
+    }
+    #date-select {
+      margin-top: 3vh;
+    }
     #new-form {
       input[type='text']{
         width: 30vw;

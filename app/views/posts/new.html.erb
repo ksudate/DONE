@@ -4,13 +4,13 @@
       <div>
         <%= form.text_field :content %>
       </div>
-      <div>
-        <%= form.radio_button(:rank, "High") %>
-        <%= form.label(:rank, "High") %>
-        <%= form.radio_button(:rank, "Low") %>
-        <%= form.label(:rank, "Low") %>
+      <div id='radio-btn'>
+        <%= form.radio_button :rank, "High", id: 'high' %>
+        <%= form.label :rank, "High", class: 'high' %>
+        <%= form.radio_button :rank, "Low", id: 'low' %>
+        <%= form.label :rank, "Low", class: 'low' %>
       </div>
-      <div>
+      <div id='date-select'>
         <%= form.date_select :deadline %>
         <%= form.hidden_field :line_id, :value => session[:line_id] %>
       </div>
