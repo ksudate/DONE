@@ -46,10 +46,6 @@ class SplintsController < ApplicationController
     redirect_to splints_path
   end
 
-  def destroy_all
-    Splint.where(sp_number: params[:sp_number]).destroy_all
-  end
-
   private
   
   def splint_params
