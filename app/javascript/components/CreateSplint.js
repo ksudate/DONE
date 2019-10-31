@@ -76,6 +76,34 @@ class CreateSplint extends React.Component {
         }
       }
     }
+
+    var new_link_div = document.createElement('div');
+    new_link_div.classList.add("new-link-div");
+    div_keep.appendChild(new_link_div);
+    var new_link = document.createElement('a');
+    new_link.id = 'new-link'
+    new_link.href = '/splints/new?kpt=Keep&sp_number=' + String(value);
+    new_link.innerHTML = '+'
+    new_link_div.appendChild(new_link);
+
+    var new_link_div = document.createElement('div');
+    new_link_div.classList.add("new-link-div");
+    div_problem.appendChild(new_link_div);
+    var new_link = document.createElement('a');
+    new_link.id = 'new-link'
+    new_link.href = '/splints/new?kpt=Problem&sp_number=' + String(value);
+    new_link.innerHTML = '+'
+    new_link_div.appendChild(new_link);
+
+    var new_link_div = document.createElement('div');
+    new_link_div.classList.add("new-link-div");
+    div_try.appendChild(new_link_div);
+    var new_link = document.createElement('a');
+    new_link.id = 'new-link'
+    new_link.href = '/splints/new?kpt=Try&sp_number=' + String(value);
+    new_link.innerHTML = '+'
+    new_link_div.appendChild(new_link);
+
     this.setState({ value: value + 1 });
   }
 
