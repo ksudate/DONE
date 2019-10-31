@@ -6,6 +6,7 @@ class SplintsController < ApplicationController
   before_action :line_login, only: [:index]
 
   def index
+    @splint = Splint.where(line_id: session[:line_id])
     @keep = Splint.where(line_id: session[:line_id], kpt: 'Keep')
     @problem = Splint.where(line_id: session[:line_id], kpt: 'Problem')
     @try = Splint.where(line_id: session[:line_id], kpt: 'Try')
@@ -14,7 +15,7 @@ class SplintsController < ApplicationController
   def show
     @splint = Splint.find(params[:id])
   end
-  
+
   def new
     @splint = Splint.new
     @sp_number = params[:sp_number]
@@ -33,7 +34,7 @@ class SplintsController < ApplicationController
       redirect_to splints_path
     end
   end
-  
+
   def update
     splint = Splint.find(params[:id])
     splint.update(splint_edit_params)
@@ -47,7 +48,7 @@ class SplintsController < ApplicationController
   end
 
   private
-  
+
   def splint_params
     params.require(:splint).permit(:content, :line_id, :kpt, :sp_number)
   end

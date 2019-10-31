@@ -69,29 +69,25 @@
             font-size: 1.5em;
             letter-spacing: 0.2em;
             margin-bottom: 4vh;
-        }
-
-        label:hover {
             color: #8e8eff;
         }
-
         .hidden_box {
             margin-bottom: 5vh;
         }
 
-        .hidden_box input {
-            display: none;
-        }
-        .hidden_box .hidden_show {
-            height: 0;
-            padding: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: 0.8s;
-        }
-        .hidden_box input:checked ~ .hidden_show {
-            height: auto;
-            opacity: 1;
-        }
+        // .hidden_box input {
+        //     display: none;
+        // }
+        // .hidden_box .hidden_show {
+        //     height: 0;
+        //     padding: 0;
+        //     overflow: hidden;
+        //     opacity: 0;
+        //     transition: 0.8s;
+        // }
+        // .hidden_box input:checked ~ .hidden_show {
+        //     height: auto;
+        //     opacity: 1;
+        // }
     }
 }
