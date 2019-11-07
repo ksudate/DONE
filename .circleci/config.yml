@@ -54,7 +54,7 @@ jobs:
       - run:
           name: DBのMigrate
           command: |
-            heroku run bundle exec rails db:migrate
+            heroku run rails db:migrate
 workflows:
   version: 2
   build-deploy:
