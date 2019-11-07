@@ -7,9 +7,6 @@ class SplintsController < ApplicationController
 
   def index
     @splint = Splint.where(line_id: session[:line_id])
-    @keep = Splint.where(line_id: session[:line_id], kpt: 'Keep')
-    @problem = Splint.where(line_id: session[:line_id], kpt: 'Problem')
-    @try = Splint.where(line_id: session[:line_id], kpt: 'Try')
   end
 
   def show
