@@ -8,17 +8,17 @@ module Common
 
   def ensure_correct_user
     @post = Post.find(params[:id])
-    if @post.line_id != session[:line_id]
-      flash[:notice] = "権限がありません"
-      redirect_to posts_path
-    end
+    return if @post.line_id == session[:line_id]
+
+    flash[:notice] = '権限がありません'
+    redirect_to posts_path
   end
 
   def authenticate_user
-    unless session[:line_id]
-      flash[:notice] = "ログインしてください"
-      redirect_to root_path
-    end
+    return if session[:line_id]
+
+    flash[:notice] = 'ログインしてください'
+    redirect_to root_path
   end
 
   def require_accesstoken
@@ -78,9 +78,7 @@ module Common
   end
 
   def create_usertable(access_token, line_id)
-    unless User.find_by(line_id: line_id)
-      User.create(line_id: line_id, access_token: access_token)
-    end
+    User.create(line_id: line_id, access_token: access_token) unless User.find_by(line_id: line_id)
   end
 
   def line_login
@@ -92,14 +90,14 @@ module Common
     line_id = fetch_line_profile(access_token)
     session[:line_id] = line_id
     create_usertable(access_token, line_id)
-    flash[:notice] = "ログインしました"
+    flash[:notice] = 'ログインしました'
   end
 
   def line_logout
     setup
     revoke_token
     session.delete(:line_id)
-    flash[:notice] = "ログアウトしました"
+    flash[:notice] = 'ログアウトしました'
     redirect_to root_path
   end
 end
