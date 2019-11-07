@@ -1,16 +1,12 @@
-<% if session[:access_token] %>
-  <div id="splint">
-    <div id="splint-div">
-      <div id="splint-link">
-        <p>KPT</p>
+<div id="splint">
+  <div id="splint-div">
+    <div id="splint-link">
+      <p>KPT</p>
+    </div>
+    <div>
+      <div id='test'>
       </div>
-      <div>
-        <div id='test'>
-        </div>
-        <%= react_component("CreateSplint", { splint: @splint.to_json }) %>
-      </div>
+      <%= react_component("CreateSplint", { splint: @splint.to_json }) %>
     </div>
   </div>
-<% else %>
-  <%= render 'shared/unauthorized' %>
-<% end %>
+</div>

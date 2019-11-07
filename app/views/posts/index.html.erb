@@ -1,26 +1,23 @@
-<% if session[:access_token] %>
-  <div id="post">
-    <div id="post-div">
-      <div id="post-link">
-        <p>TASK LIST</p>
-      </div>
-      <table>
-        <tr>
-          <th>タスク</th>
-          <th>期限</th>
-          <th>重要度</th>
-        </tr>
-      <% @post.each do |p| %>
-        <tr>
-          <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("HelloWorld", { greeting: p.content }) %></a></td>
-          <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("HelloWorld", { greeting: p.deadline.strftime("%Y-%m-%d") }) %></a></td>
-          <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("HelloWorld", { greeting: p.rank }) %></a></td>
-        </tr>
-      <% end %>
-      </table>
-      <div class="new-link-div"><%= link_to '+', new_post_path, id: 'new-link' %></div>
+<div id="post">
+  <div id="post-div">
+    <div id="post-link">
+      <%= flash[:notice] %>
+      <p>TASK LIST</p>
     </div>
+    <table>
+      <tr>
+        <th>タスク</th>
+        <th>期限</th>
+        <th>重要度</th>
+      </tr>
+    <% @post.each do |p| %>
+      <tr>
+        <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("CreatePost", { value: p.content }) %></a></td>
+        <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("CreatePost", { value: p.deadline.strftime("%Y-%m-%d") }) %></a></td>
+        <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("CreatePost", { value: p.rank }) %></a></td>
+      </tr>
+    <% end %>
+    </table>
+    <div class="new-link-div"><%= link_to '+', new_post_path, id: 'new-link' %></div>
   </div>
-<% else %>
-  <%= render 'shared/unauthorized' %>
-<% end %>
+</div>
