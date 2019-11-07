@@ -4,8 +4,11 @@ require 'json'
 class SplintsController < ApplicationController
   include Common
   before_action :line_login, only: [:index]
+  before_action :authenticate_user
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
+    require_accesstoken
     @splint = Splint.where(line_id: session[:line_id])
   end
 
@@ -23,13 +26,8 @@ class SplintsController < ApplicationController
   end
 
   def create
-    if session[:access_token].nil?
-      render action: :index
-      flash.now[:danger] = 'ログインしてください。'
-    else
-      Splint.create(splint_params)
-      redirect_to splints_path
-    end
+    Splint.create(splint_params)
+    redirect_to splints_path
   end
 
   def update

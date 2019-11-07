@@ -4,8 +4,11 @@ require 'json'
 class PostsController < ApplicationController
   include Common
   before_action :line_login, only: [:index]
+  before_action :authenticate_user
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
+    require_accesstoken
     @post = Post.where(line_id: session[:line_id])
   end
 
@@ -22,13 +25,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    if session[:access_token].nil?
-      render action: :index
-      flash.now[:danger] = 'ログインしてください。'
-    else
-      Post.create(post_params)
-      redirect_to posts_path
-    end
+    Post.create(post_params)
+    redirect_to posts_path
   end
 
   def update

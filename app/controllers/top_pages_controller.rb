@@ -1,7 +1,6 @@
 class TopPagesController < ApplicationController
   include Common
   before_action :setup, only: [:home]
-  before_action :line_logout, only: [:logout]
 
   def home
     # @url = 'https://access.line.me/oauth2/v2.1/authorize' \
@@ -18,5 +17,4 @@ class TopPagesController < ApplicationController
          + '&scope=openid%20profile' \
   end
 
-  def logout; end
 end
