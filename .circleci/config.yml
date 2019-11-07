@@ -51,6 +51,10 @@ jobs:
           name: Master を Heroku にデプロイ
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+      - run:
+          name: DBのMigrate
+          command: |
+            heroku run bundle exec rails db:migrate
 workflows:
   version: 2
   build-deploy:
