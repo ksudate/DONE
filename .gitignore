@@ -10,7 +10,7 @@
 /public/assets
 .byebug_history
 /config/master.key
-/vender/*
+/vender/bundle/
 /public/packs
 /public/packs-test
 /node_modules

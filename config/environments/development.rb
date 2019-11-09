@@ -1,4 +1,6 @@
 Rails.application.configure do
+  #config.hosts.clear
+  #config.hosts << 'localhost'
   config.cache_classes = false
 
   config.eager_load = false

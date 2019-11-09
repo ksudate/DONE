@@ -4,9 +4,10 @@ threads threads_count, threads_count
 
 preload_app!
 
-port        ENV.fetch("PORT") { 3000 }
+#bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+port  ENV.fetch("PORT") { 3000 }
 environment ENV.fetch("RAILS_ENV") { "development" }
-pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+pidfile ENV.fetch("PIDFILE") { "tmp/sockets/server.pid" }
 
 on_worker_boot do
   ActiveRecord::Base.establish_connection
