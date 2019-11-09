@@ -5,6 +5,7 @@ default: &default
   username: <%= Rails.application.credentials.db[:user_id] %>
   password: <%= Rails.application.credentials.db[:password] %>
   socket: /tmp/mysql.sock
+  connection_pool: <%= ENV['MAX_CONNECTION_POOL'] || 5 %>
 
 development:
   <<: *default
