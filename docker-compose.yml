@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0.18
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-confd:/etc/mysql/conf.d
+    env_file: development.env
+
+  web:
+    build:
+      context: ./
+      dockerfile: ./web/Dockerfile
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/app_name
+    ports:
+      - "3000:3000"
+    env_file: development.env
+    depends_on:
+      - db

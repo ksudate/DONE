@@ -19,3 +19,4 @@ yarn-debug.log*
 .yarn-integrity
 /.circleci/*
 .DS_Store
+development.env
