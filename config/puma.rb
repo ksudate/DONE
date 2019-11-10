@@ -4,7 +4,7 @@ threads threads_count, threads_count
 
 preload_app!
 
-#bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
 port  ENV.fetch("PORT") { 3000 }
 environment ENV.fetch("RAILS_ENV") { "development" }
 pidfile ENV.fetch("PIDFILE") { "tmp/sockets/server.pid" }
