@@ -20,3 +20,4 @@ yarn-debug.log*
 /.circleci/*
 .DS_Store
 development.env
+/db/mysql
