@@ -6,6 +6,7 @@ services:
       - "3306:3306"
     volumes:
       - ./mysql-confd:/etc/mysql/conf.d
+      - ./db/mysql/volumes:/var/lib/mysql
     env_file: development.env
 
   web:
