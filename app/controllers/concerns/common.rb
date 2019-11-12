@@ -6,8 +6,16 @@ module Common
     @client_secret = Rails.application.credentials.line[:client_secret]
   end
 
-  def ensure_correct_user
+  def ensure_correct_user_post
     @post = Post.find(params[:id])
+    return if @post.line_id == session[:line_id]
+
+    flash[:notice] = '権限がありません'
+    redirect_to posts_path
+  end
+
+  def ensure_correct_user_splint
+    @splint = Splint.find(params[:id])
     return if @post.line_id == session[:line_id]
 
     flash[:notice] = '権限がありません'
