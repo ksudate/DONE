@@ -16,10 +16,10 @@ module Common
 
   def ensure_correct_user_splint
     @splint = Splint.find(params[:id])
-    return if @post.line_id == session[:line_id]
+    return if @splint.line_id == session[:line_id]
 
     flash[:notice] = '権限がありません'
-    redirect_to posts_path
+    redirect_to splints_path
   end
 
   def authenticate_user
