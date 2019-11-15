@@ -98,36 +98,7 @@
         height: 4vh;
       }
       input[type='submit']{
-        font-size: 1.5em;
-        color: #414141;
-        text-decoration: none;
-        padding: 0.2em 1.5em;
-        border: solid 1px #414141;
-        border-radius: 3px;
-        margin: 2em 1em;
-      }
-      input[type='submit']:hover {
-        background: #414141;
-        color: white;
-      }
-      #submit {
-        padding-top: 3vh;
-      }
-    }
-  }
-}
-
-#edit {
-  text-align: center;
-  width: 100vw;
-  padding-top: 15vh;
-  #edit-content {
-    #edit-form {
-      input[type='text'] {
-        width: 30vw;
-        height: 4vh;
-      }
-      input[type='submit'] {
+        -webkit-appearance: none;
         font-size: 1.5em;
         color: #414141;
         text-decoration: none;
