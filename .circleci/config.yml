@@ -61,6 +61,9 @@ jobs:
       #     command: |
       #       git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
       - run:
+          name: "docker imageのbuild"
+          command: docker build --rm=false -t registry.heroku.com/${HEROKU_APP_NAME}/web .
+      - run:
           name: HerokuにContainerへログイン
           command: heroku container:login
       - run:
