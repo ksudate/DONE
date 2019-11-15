@@ -60,8 +60,11 @@ jobs:
       #     command: |
       #       git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
       - run:
-          name: HerokuにContainerのUpload
-          command: heroku container:push web -a $HEROKU_APP_NAME && heroku container:release web -a $HEROKU_APP_NAME
+          name: HerokuにContainerのPush
+          command: heroku container:push web -a $HEROKU_APP_NAME
+      - run:
+          name: HerokuにContainerのRelese
+          command: heroku container:release web -a $HEROKU_APP_NAME
       - run:
           name: DBのMigrate
           command: heroku run rails db:migrate -a $HEROKU_APP_NAME
