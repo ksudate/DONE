@@ -47,6 +47,7 @@ jobs:
       - image: circleci/ruby:2.6.0-stretch-node-browsers-legacy
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Install Heroku CLI, if necessary
           command: |
