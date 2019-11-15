@@ -37,6 +37,7 @@ class LineBotController < ApplicationController
     head :bad_request unless client.validate_signature(body, signature)
     events = client.parse_events_from(body)
     events.each do |event|
+      logger.debug(event)
       response = fetch_task(event)
       case event
       when Line::Bot::Event::Message
