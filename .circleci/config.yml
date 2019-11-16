@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 環境変数の設定
+          name: Setting environment variables
           command: |
             echo MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} >> development.env
       - run:
@@ -94,10 +94,10 @@ jobs:
       #     command: |
       #       git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
       - run:
-          name: HerokuにContainerのRelese
+          name: heroku container:relese
           command: heroku container:release web -a $HEROKU_APP_NAME
       - run:
-          name: DBのMigrate
+          name: heroku run rails db:migrate
           command: heroku run rails db:migrate -a $HEROKU_APP_NAME
 workflows:
   version: 2
