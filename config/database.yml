@@ -10,7 +10,7 @@ default: &default
 development:
   <<: *default
   database: DONE_development
-  host: 127.0.0.1
+
 
 test:
   <<: *default
