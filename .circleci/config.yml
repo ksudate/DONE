@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: dockerize Install
+          command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+      - run:
           name: Setting environment variables
           command: |
             echo MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} >> development.env
