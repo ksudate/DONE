@@ -5,7 +5,7 @@ default: &default
   username: root
   password: <%= Rails.application.credentials.db[:password] %>
   socket: /tmp/mysql.sock
-  host: db
+  # host: db
 
 development:
   <<: *default
