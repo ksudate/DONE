@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: 環境変数の設定
+          command: |
+            echo MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} >> development.env
+      - run:
           name: docker-compose build
           command: docker-compose build
       - run:
