@@ -40,10 +40,6 @@ jobs:
           name: Rubocop
           command: bundle exec rubocop --require rubocop-rails -a
 
-      - run:
-          name: Test
-          command: bundle exec rails test
-
       - store_test_results:
           path: test_results
   deploy:
