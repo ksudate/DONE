@@ -27,7 +27,7 @@ jobs:
           name: "before_test: setup db"
           command: |
             echo ${RAILS_MASTER_KEY} >> config/master.key
-            docker-compose run web rails db:migrate
+            docker-compose run web rails db:create db:migrate
       - run:
           name: test
           command: docker-compose run web rails test
