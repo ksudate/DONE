@@ -5,11 +5,12 @@ default: &default
   username: root
   password: <%= Rails.application.credentials.db[:password] %>
   socket: /tmp/mysql.sock
-  # host: db
+  host: db
 
 development:
   <<: *default
   database: DONE_development
+  host: 127.0.0.1
 
 test:
   <<: *default
