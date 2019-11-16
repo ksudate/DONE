@@ -16,8 +16,8 @@ jobs:
           name: docker-compose up
           command: docker-compose up -d
       - run:
-          name: sleep for waiting launch db
-          command: sleep 1
+         name: 'wait for db'
+         command: dockerize -wait tcp://localhost:3306 -timeout 1m
       - run:
           name: "before_test: setup db"
           command: |
