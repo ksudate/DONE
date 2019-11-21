@@ -16,6 +16,7 @@ class LineBotController < ApplicationController
              + "\n" + 'の形式で入力してね！'
     user_id = event['source']['userId']
     request_message = event['message']['text']
+    logger.debug(request_message)
     post = Post.where(line_id: user_id)
     if request_message == 'タスク'
       response = '今日のタスクは' + "\n"
