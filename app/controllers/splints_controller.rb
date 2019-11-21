@@ -9,7 +9,7 @@ class SplintsController < ApplicationController
 
   def index
     require_accesstoken
-    @splint = Splint.where("line_id = ?", session[:line_id])
+    @splint = Splint.where(line_id: session[:line_id])
   end
 
   def show

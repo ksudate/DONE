@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def index
     require_accesstoken
-    @post = Post.where("line_id = ?", session[:line_id])
+    @post = Post.where(line_id: session[:line_id])
   end
 
   def show
