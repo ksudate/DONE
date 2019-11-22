@@ -12,3 +12,6 @@ Botからはタスクの登録・読み込みが可能で、Webアプリでは�
 
 # アプリ URL
 [DONE](https://tmrekk121-done.herokuapp.com)
+
+## License
+MIT
