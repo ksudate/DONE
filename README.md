@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/tmrekk121/DONE/tree/master.svg?style=svg)](https://circleci.com/gh/tmrekk121/DONE/tree/master)
+
 # DONE
 * Ruby version 
 2.6.0
