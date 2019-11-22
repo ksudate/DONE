@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/tmrekk121/DONE/tree/master.svg?style=svg)](https://circleci.com/gh/tmrekk121/DONE/tree/master)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 # DONE
 * Ruby version 
