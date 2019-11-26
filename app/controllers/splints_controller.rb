@@ -5,7 +5,7 @@ class SplintsController < ApplicationController
   include Common
   before_action :line_login, only: [:index]
   before_action :authenticate_user
-  before_action :ensure_correct_user_splint, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user_splint, only: %i[edit update destroy]
 
   def index
     require_accesstoken

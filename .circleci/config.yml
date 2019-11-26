@@ -37,7 +37,7 @@ jobs:
             - ~/.cache/yarn
 
       - run:
-          name: Rubocop の 実行
+          name: Rubocop
           command: bundle exec rubocop --require rubocop-rails -a
 
       - store_test_results:
@@ -47,6 +47,7 @@ jobs:
       - image: circleci/ruby:2.6.0-stretch-node-browsers-legacy
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Install Heroku CLI, if necessary
           command: |
@@ -60,10 +61,10 @@ jobs:
       #     command: |
       #       git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
       - run:
-          name: HerokuにContainerのUpload
+          name: heroku container:relese
           command: heroku container:release web -a $HEROKU_APP_NAME
       - run:
-          name: DBのMigrate
+          name: heroku run rails db:migrate
           command: heroku run rails db:migrate -a $HEROKU_APP_NAME
 workflows:
   version: 2
