@@ -3,11 +3,11 @@
 one:
   sp_number: 1
   content: MyString
-  kpt: MyString
+  kpt: Keep
   line_id: 1
 
 two:
-  sp_number: 1
+  sp_number: 2
   content: MyString
-  kpt: MyString
+  kpt: Problem
   line_id: 1

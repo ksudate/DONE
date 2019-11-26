@@ -2,10 +2,8 @@
 
 one:
   line_id: MyString
-  post_id: MyString
   content: MyText
 
 two:
   line_id: MyString
-  post_id: MyString
   content: MyText
