@@ -10,8 +10,9 @@
 8.0.17
 
 # Overview
-LINEBotとWebアプリを使ってタスクの登録を行えます。  
-Botからはタスクの登録・読み込みが可能で、Webアプリでは登録・読み込み・更新・削除が可能です。
+KPT analysis can be saved for each sprint.  
+Task management can be performed through LINEBot, and it is possible to link with web applications.  
+It is accessible from the URL shown below.
 
 # URL
 [DONE](https://tmrekk121-done.herokuapp.com)
