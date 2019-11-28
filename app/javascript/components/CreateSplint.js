@@ -110,7 +110,6 @@ class CreateSplint extends React.Component {
         j++
       }
     } else {
-      console.log("Init")
       document.cookie = "number=1"
     }
   }
@@ -214,7 +213,6 @@ class CreateSplint extends React.Component {
     String(value_count)
     var value_count = "number=" + value_count;
     document.cookie = value_count;
-    console.log(document.cookie)
   }
 
   render () {
