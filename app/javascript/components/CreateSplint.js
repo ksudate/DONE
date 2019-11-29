@@ -23,7 +23,7 @@ class CreateSplint extends React.Component {
         var splint_number = document.createElement('label');
         splint_number.innerHTML = 'Splint' + String(j);
         hidden_box.appendChild(splint_number);
-        //
+
         var delete_splint = document.createElement("form");
         delete_splint.action = "/splints/delete_splint?sp_number=" + String(j);
         delete_splint.method = "POST";
@@ -38,8 +38,6 @@ class CreateSplint extends React.Component {
         delete_submit.setAttribute("value", "DELETE Splint");
         delete_splint.appendChild(delete_hidden);
         delete_splint.appendChild(delete_submit);
-
-
 
         var kpt_table = document.createElement('div');
         var div_keep = document.createElement('div');
@@ -141,6 +139,21 @@ class CreateSplint extends React.Component {
     var splint_number = document.createElement('label');
     splint_number.innerHTML = 'Splint' + String(value);
     hidden_box.appendChild(splint_number);
+
+    var delete_splint = document.createElement("form");
+    delete_splint.action = "/splints/delete_splint?sp_number=" + String(j);
+    delete_splint.method = "POST";
+    hidden_box.appendChild(delete_splint);
+
+    var delete_hidden = document.createElement("input");
+    var delete_submit = document.createElement("input");
+    delete_hidden.setAttribute("type", "hidden");
+    delete_submit.setAttribute("type", "submit");
+    delete_hidden.setAttribute("name", "_method");
+    delete_hidden.setAttribute("value", "DELETE");
+    delete_submit.setAttribute("value", "DELETE Splint");
+    delete_splint.appendChild(delete_hidden);
+    delete_splint.appendChild(delete_submit);
 
     var kpt_table = document.createElement('div');
     var div_keep = document.createElement('div');
