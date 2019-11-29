@@ -1,6 +1,8 @@
 Rails.application.configure do
   #config.hosts.clear
   #config.hosts << 'localhost'
+  config.web_console.whitelisted_ips = '0.0.0.0/0'
+  
   config.cache_classes = false
 
   config.eager_load = false
