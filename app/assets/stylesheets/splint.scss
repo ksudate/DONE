@@ -16,6 +16,20 @@
             background: #414141;
             color: white;
         }
+        #delete-link {
+            -webkit-appearance: none;
+            font-size: 1.2em;
+            color: #414141;
+            text-decoration: none;
+            padding: 0.4em 1.5em;
+            border: solid 1px #414141;
+            border-radius: 3px;
+            margin: 0 1em;
+        }
+        #delete-link:hover {
+            background: #414141;
+            color: white;
+        }
         #kpt-table{
             display: flex;
             justify-content: center;

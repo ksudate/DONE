@@ -21,7 +21,7 @@ class CreateSplint extends React.Component {
         elem.appendChild(hidden_box);
 
         var splint_number = document.createElement('label');
-        splint_number.innerHTML = 'Splint' + String(j);
+        splint_number.innerHTML = 'Sprint' + String(j);
         hidden_box.appendChild(splint_number);
 
         var delete_splint = document.createElement("form");
@@ -35,7 +35,8 @@ class CreateSplint extends React.Component {
         delete_submit.setAttribute("type", "submit");
         delete_hidden.setAttribute("name", "_method");
         delete_hidden.setAttribute("value", "DELETE");
-        delete_submit.setAttribute("value", "DELETE Splint");
+        delete_submit.setAttribute("value", "DELETE Sprint");
+        delete_submit.classList.add("delete-link");
         delete_splint.appendChild(delete_hidden);
         delete_splint.appendChild(delete_submit);
 
@@ -125,7 +126,7 @@ class CreateSplint extends React.Component {
         j++
       }
     } else {
-      document.cookie = "number=1"
+      document.cookie = "number=0"
     }
   }
 
@@ -141,7 +142,7 @@ class CreateSplint extends React.Component {
     hidden_box.appendChild(splint_number);
 
     var delete_splint = document.createElement("form");
-    delete_splint.action = "/splints/delete_splint?sp_number=" + String(j);
+    delete_splint.action = "/splints/delete_splint?sp_number=" + String(value);
     delete_splint.method = "POST";
     hidden_box.appendChild(delete_splint);
 
@@ -151,7 +152,8 @@ class CreateSplint extends React.Component {
     delete_submit.setAttribute("type", "submit");
     delete_hidden.setAttribute("name", "_method");
     delete_hidden.setAttribute("value", "DELETE");
-    delete_submit.setAttribute("value", "DELETE Splint");
+    delete_submit.setAttribute("value", "DELETE Sprint");
+    delete_submit.classList.add("delete-link");
     delete_splint.appendChild(delete_hidden);
     delete_splint.appendChild(delete_submit);
 
@@ -248,7 +250,7 @@ class CreateSplint extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <button id="add-splint" onClick={e => this.fetchSplint(e, this.props.splint, this.state.value)}>Add Splint</button>
+        <button id="add-splint" onClick={e => this.fetchSplint(e, this.props.splint, this.state.value)}>Add Sprint</button>
       </React.Fragment>
     );
   }

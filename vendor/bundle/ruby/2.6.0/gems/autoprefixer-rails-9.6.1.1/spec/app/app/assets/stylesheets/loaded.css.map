@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAC;EACA,IAAI,EAAE,IAAI;CAAG",
+    "sources": [
+        "loaded.sass"
+    ],
+    "names": [],
+    "file": "loaded.css"
+}
