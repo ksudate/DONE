@@ -11,9 +11,9 @@
       </tr>
     <% @post.each do |p| %>
       <tr>
-        <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("CreatePost", { value: p.content }) %></a></td>
-        <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("CreatePost", { value: p.deadline.strftime("%Y-%m-%d") }) %></a></td>
-        <td><a href="/posts/<%=p.id%>" class="post-a"><%= react_component("CreatePost", { value: p.rank }) %></a></td>
+        <td><a href="/posts/<%=p.id%>" class="post-a"><%= p.content %></a></td>
+        <td><a href="/posts/<%=p.id%>" class="post-a"><%= p.deadline.strftime("%Y-%m-%d") %></a></td>
+        <td><a href="/posts/<%=p.id%>" class="post-a"><%= p.rank %></a></td>
       </tr>
     <% end %>
     </table>
