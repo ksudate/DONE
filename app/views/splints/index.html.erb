@@ -3,7 +3,7 @@
   <div id='sprint-table'>
   </div>
   <button id='add_sprint' onclick='create_next_sprint(<%= raw @splint.to_json %>)'>Add Sprint</button>
-  <% javascript_tag do %>
+  <%= javascript_tag do %>
     window.sprint = <%= raw @splint.to_json %>;
   <% end %>
 </div>
