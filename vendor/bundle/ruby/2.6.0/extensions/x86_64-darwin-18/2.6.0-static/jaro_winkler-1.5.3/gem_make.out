@@ -1,5 +1,5 @@
 current directory: /Users/e175754/DONE/DONE/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.3/ext/jaro_winkler
-/Users/e175754/.rbenv/versions/2.6.0/bin/ruby -I /Users/e175754/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20190924-91182-7m9crc.rb extconf.rb
+/Users/e175754/.rbenv/versions/2.6.0/bin/ruby -I /Users/e175754/.rbenv/versions/2.6.0/lib/ruby/2.6.0 -r ./siteconf20191220-38004-w30f1r.rb extconf.rb
 creating Makefile
 
 current directory: /Users/e175754/DONE/DONE/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.3/ext/jaro_winkler
@@ -15,4 +15,4 @@ linking shared-object jaro_winkler/jaro_winkler_ext.bundle
 
 current directory: /Users/e175754/DONE/DONE/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.3/ext/jaro_winkler
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 jaro_winkler_ext.bundle ./.gem.20190924-91182-1745jqb/jaro_winkler
+/usr/bin/install -c -m 0755 jaro_winkler_ext.bundle ./.gem.20191220-38004-1gh79pe/jaro_winkler
