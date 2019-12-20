@@ -1,42 +1,58 @@
-#splint {
+#sprint {
     text-align: center;
     width: 100vw;
-    #splint-div {
-        #add-splint {
-            font-size: 1.5em;
-            color: #414141;
-            text-decoration: none;
-            padding: 0.4em 1.5em;
-            border: solid 1px #414141;
-            border-radius: 3px;
-            margin: 1.5em 1em;
-            cursor: pointer;
-        }
-        #add-splint:hover {
-            background: #414141;
-            color: white;
-        }
-        #kpt-table{
-            display: flex;
-            justify-content: center;
-            .new-link-div {
-                margin-top: 2vh;
-            }
-            #new-link {
-                font-weight: 100;
-                text-decoration: none;
-                font-size: 3em;
-                color: #d3d3d3;
-            }
-            #new-link:hover {
-                color: #8e8eff;
-            }
-        }
-        div {
-            margin: 0 2em;
+    .sprint-title {
+        margin: 5vh;
+        font-weight: 100;
+        font-size: 3em;
+        color: #414141;
+        letter-spacing: 0.5em;
+    }
+    label {
+        font-size: 1.5em;
+        letter-spacing: 0.2em;
+        color: #8e8eff;
+    }
+    #add_sprint {
+        transition: 0.5s;
+        font-size: 1.5em;
+        color: #414141;
+        text-decoration: none;
+        padding: 0.4em 1.5em;
+        border: solid 1px #414141;
+        border-radius: 3px;
+        margin: 1.5em 1em;
+        cursor: pointer;
+    }
+    #add_sprint:hover {
+        transition: 0.5s;
+        background: #414141;
+        color: white;
+    }
+    .delete-link {
+        transition: 0.5s;
+        -webkit-appearance: none;
+        font-size: 1.2em;
+        color: #414141;
+        text-decoration: none;
+        padding: 0.4em 1.5em;
+        border: solid 1px #414141;
+        border-radius: 3px;
+        margin: 2vh 0;
+    }
+    .delete-link:hover {
+        transition: 0.5s;
+        background: #414141;
+        color: white;
+    }
+    .table-div {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10vh;
+        .table-kpt {
+            margin: 0 2vw;
         }
         table{
-            margin: auto;
             border-collapse: collapse;
             border-spacing: 0;
             width: 25vw;
@@ -50,16 +66,12 @@
                 font-size: 1.8em;
             }
             td{
+                transition: 0.4s;
                 color: #414141;
                 font-size: 1.5em;
-                .splint-a {
-                    text-decoration: none;
-                    div {
-                        color: #414141;
-                    }
-                }
             }
             td:hover{
+                transition: 0.4s;
                 background-color: #d4f0fd;
             }
             th, td{
@@ -68,25 +80,21 @@
                 padding: 3vh 0;
             }
         }
-        padding-top: 10vh;
-        #splint-link {
-            p {
-                margin-top: 5vh;
-                font-weight: 100;
-                font-size: 3em;
-                color: #414141;
-                letter-spacing: 0.5em;
-            }
-            margin-bottom: 10vh;
+        .sprint-a {
+            font-weight: 100;
+            text-decoration: none;
+            color: #414141;
         }
-        label {
-            font-size: 1.5em;
-            letter-spacing: 0.2em;
-            margin-bottom: 4vh;
+        .new-link {
+            transition: 0.4s;
+            font-weight: 100;
+            text-decoration: none;
+            font-size: 3em;
+            color: #d3d3d3;
+        }
+        .new-link:hover {
+            transition: 0.4s;
             color: #8e8eff;
-        }
-        .hidden_box {
-            margin-bottom: 5vh;
         }
     }
 }

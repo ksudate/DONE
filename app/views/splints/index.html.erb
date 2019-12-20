@@ -1,12 +1,9 @@
-<div id="splint">
-  <div id="splint-div">
-    <div id="splint-link">
-      <p>KPT</p>
-    </div>
-    <div>
-      <div id='test'>
-      </div>
-      <%= react_component("CreateSplint", { splint: @splint.to_json }) %>
-    </div>
+<div id='sprint'>
+  <p class='sprint-title'>KPT</p>
+  <div id='sprint-table'>
   </div>
+  <button id='add_sprint' onclick='create_next_sprint(<%= raw @splint.to_json %>)'>Add Sprint</button>
+  <%= javascript_tag do %>
+    window.sprint = <%= raw @splint.to_json %>;
+  <% end %>
 </div>
