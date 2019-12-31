@@ -42,8 +42,8 @@ module Common
     params = {
       grant_type: 'authorization_code',
       code: code,
-      redirect_uri: 'http://localhost:3000/posts',
-      # redirect_uri: 'https://tmrekk121-done.herokuapp.com/posts',
+      # redirect_uri: 'http://localhost:3000/posts',
+      redirect_uri: 'https://tmrekk121-done.herokuapp.com/posts',
       client_id: @client_id,
       client_secret: @client_secret
     }
