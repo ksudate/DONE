@@ -42,8 +42,8 @@ module Common
     params = {
       grant_type: 'authorization_code',
       code: code,
-      # redirect_uri: 'http://localhost:3000/posts',
-      redirect_uri: 'https://tmrekk121-done.herokuapp.com/posts',
+      redirect_uri: 'http://localhost:3000/posts',
+      # redirect_uri: 'https://tmrekk121-done.herokuapp.com/posts',
       client_id: @client_id,
       client_secret: @client_secret
     }
@@ -62,7 +62,7 @@ module Common
     headers = { 'Authorization' => "Bearer #{access_token}" }
     response = http.get(uri.path, headers)
     hash = JSON.parse(response.body)
-    hash['userId']
+    return hash['userId'], hash['displayName'], hash['pictureUrl']
   end
 
   def revoke_token
@@ -95,8 +95,10 @@ module Common
     setup
     code = params[:code]
     access_token = fetch_token(code)
-    line_id = fetch_line_profile(access_token)
+    line_id, display_name, picture_url = fetch_line_profile(access_token)
     session[:line_id] = line_id
+    session[:display_name] = display_name
+    session[:picture_url] = picture_url
     create_usertable(access_token, line_id)
     flash[:notice] = 'ログインしました'
   end
