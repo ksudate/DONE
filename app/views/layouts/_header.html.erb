@@ -1,9 +1,10 @@
-<div id="header">
-  <div><a href="/"><p>DONE</p></a></div>
+<div id='header'>
+  <div><a href='/'><p>DONE</p></a></div>
   <% if session[:line_id] %>
     <div><%= render 'shared/menubar' %></div>
-    <div id="header-right">
-      <%= button_to 'Logout', line_logout_path, method: :delete, class: "header-link" %>
+    <div id='header-right'>
+      <%= image_tag session[:picture_url]+'/small', id: 'header-img', onclick: 'switch_button_display()' %>
+      <%= button_to 'Logout', line_logout_path, method: :delete, class: 'header-link', id: 'logout-btn' %>
     </div>
   <% end %>
 </div>

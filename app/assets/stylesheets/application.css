@@ -48,6 +48,14 @@ body { font-size:62.5%; }
   margin-left: auto;
 }
 
+#header-img {
+  height: 5vh;
+  margin-top: 1vh;
+  margin-right: 1vw;
+  border-radius: 5em;
+  cursor: pointer;
+}
+
 .header-link{
     -webkit-appearance: none;
     text-decoration: none;
@@ -58,6 +66,7 @@ body { font-size:62.5%; }
     padding-right: 2vw;
     border: 0;
     cursor: pointer;
+    visibility: hidden;
 }
 
 .header-link:hover {
