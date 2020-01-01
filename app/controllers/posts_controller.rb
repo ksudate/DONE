@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @user = User.find_by(line_id: session[:line_id])
   end
 
   def edit
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :line_id, :rank, :deadline)
+    params.require(:post).permit(:content, :line_id, :rank, :deadline, :user_id)
   end
 end

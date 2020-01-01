@@ -8,6 +8,7 @@
         <%= form.hidden_field :line_id, :value => session[:line_id] %>
         <%= form.hidden_field :sp_number, :value => @sp_number %>
         <%= form.hidden_field :kpt, :value => params[:kpt] %>
+        <%= form.hidden_field :user_id, :value => @user.id %>
         <%= form.submit 'Add' %>
       <% end %>
     </div>

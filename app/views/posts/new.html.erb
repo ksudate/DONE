@@ -13,6 +13,7 @@
       <div id='date-select'>
         <%= form.date_select :deadline %>
         <%= form.hidden_field :line_id, :value => session[:line_id] %>
+        <%= form.hidden_field :user_id, :value => @user.id %>
       </div>
       <%= form.submit 'Add' %>
     <% end %>

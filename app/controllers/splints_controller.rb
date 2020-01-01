@@ -20,6 +20,7 @@ class SplintsController < ApplicationController
   def new
     @splint = Splint.new
     @sp_number = params[:sp_number]
+    @user = User.find_by(line_id: session[:line_id])
   end
 
   def edit
@@ -52,7 +53,7 @@ class SplintsController < ApplicationController
   private
 
   def splint_params
-    params.require(:splint).permit(:content, :line_id, :kpt, :sp_number)
+    params.require(:splint).permit(:content, :line_id, :kpt, :sp_number, :user_id)
   end
 
   def splint_edit_params

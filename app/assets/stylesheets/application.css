@@ -8,13 +8,13 @@
   padding: 0px;
 }
 
-body { font-size:62.5%; }
-
-#flash-message {
-  padding-top: 1.5em;
+body {
+  font-size:62.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
-#flash-message p {
+#flash-message {
   font-size: 1.5em;
   font-weight: 600;
   color: #ff6347;
@@ -26,6 +26,10 @@ body { font-size:62.5%; }
   height: 7vh;
   border-bottom: 1px solid #f5f5f5 ;
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #ffffff;
 }
 
 #header a {
@@ -51,12 +55,15 @@ body { font-size:62.5%; }
 #header-img {
   height: 5vh;
   margin-top: 1vh;
-  margin-right: 1vw;
+  margin-right: 2vw;
   border-radius: 5em;
   cursor: pointer;
 }
 
 .header-link{
+    position: fixed;
+    top: 7vh;
+    right: 0;
     -webkit-appearance: none;
     text-decoration: none;
     color: #696969;

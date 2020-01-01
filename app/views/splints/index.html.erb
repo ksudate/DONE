@@ -1,9 +1,23 @@
-<div id='sprint'>
-  <p class='sprint-title'>KPT</p>
-  <div id='sprint-table'>
+<div id="sprint_dashboard">
+  <div id='sprint_left'>
+    <ul>
+      <li class="sprint-left-li-right"><i class="fas fa-bars sprint-left-li-right-i"></i></li>
+      <li class="sprint-left-li"><i class="fas fa-plus"></i> Add KPT</li>
+      <li class="sprint-left-li"><i class="fas fa-chart-bar"></i> Analysis</li>
+      <li class="sprint-left-li"><i class="fas fa-link"></i> Add Link</li>
+      <li class="sprint-left-li"><i class="fas fa-cog"></i> Project Settings</li>
+    </ul>
   </div>
-  <button id='add_sprint' onclick='create_next_sprint(<%= raw @splint.to_json %>)'>Add Sprint</button>
-  <%= javascript_tag do %>
-    window.sprint = <%= raw @splint.to_json %>;
-  <% end %>
+  <div id='sprint'>
+    <div id='sprint_header'>
+      <p>Project Name</p>
+    </div>
+    <p class='sprint-title'>KPT</p>
+    <div id='sprint-table'>
+    </div>
+    <button id='add_sprint' onclick='create_next_sprint(<%= raw @splint.to_json %>)'>Add Sprint</button>
+    <%= javascript_tag do %>
+      window.sprint = <%= raw @splint.to_json %>;
+    <% end %>
+  </div>
 </div>
