@@ -1,6 +1,6 @@
 #home {
   width: 100vw;
-  height: 100vh;
+  height: 93vh;
   #home-div {
     display: flex;
     justify-content: space-around;
@@ -12,11 +12,17 @@
     #home-left {
       text-align: left;
       p {
-        padding-top: 10vh;
-        padding-bottom: 10vh;
-        font-size: 3.5em;
+        padding-top: 7vh;
+        font-size: 4em;
         font-weight: 600;
+        color: #001e43;
+      }
+      .home-sub-p {
+        font-size: 2em;
         color: #414141;
+        font-weight: 100;
+        padding-top: 2vh;
+        padding-bottom: 7vh;
       }
       #line-login {
         font-weight: bold;
@@ -24,9 +30,9 @@
         font-size: 1.5em;
         background: #00BE00;
         color:white;
-        border-radius: 1.3em;
+        border-radius: 0.4em;
         padding:1em 1.5em;
-        transition: 0.6s;
+        transition: 0.4s;
       }
       #line-login:hover {
         background: #90ee90;
@@ -41,10 +47,15 @@
         text-align: center;
         p {
           padding-top: 10vh;
-          padding-bottom: 5vh;
           font-size: 2em;
           font-weight: 600;
+          color: #001e43;
+        }
+        .home-sub-p {
+          font-size: 1em;
           color: #414141;
+          font-weight: 100;
+          padding-bottom: 5vh;
         }
         #line-login {
           font-weight: bold;
@@ -52,7 +63,7 @@
           font-size: 1em;
           background: #00BE00;
           color:white;
-          border-radius: 1.3em;
+          border-radius: 0.4em;
           padding:1em 1.5em;
           transition: 0.6s;
         }
