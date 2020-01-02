@@ -22,22 +22,24 @@
             cursor: pointer;
         }
         .sprint-left-li:hover {
-            background-color: #ffffff;
+            // background-color: #ffffff;
+            background-color: #f9f9ff;
             color: #adadff;
         }
     }
     #sprint {
         text-align: center;
         width: 82vw;
+        background-color: #f9f9ff;
         #sprint_header {
             height: 8vh;
             display: flex;
             justify-content: space-between;
             position: sticky;
             top: 7vh;
-            // background-color: #f9f9ff;
             background-color: #fff;
             border-bottom: 1px solid #f5f5f5;
+            border: 0.1em solid #f5f5f5;
             p {
                 padding: 2vh 2vw;
                 font-size: 2em;
@@ -60,6 +62,14 @@
                 padding: 0;
                 cursor: pointer;
                 font-size: 1.5em;
+            }
+            .project-members-search {
+                margin: 1.7vh 0.5vw;
+                padding: 0vh 1vw;
+                border-radius: 1.5em;
+                border: none;
+                background-color: #f3f3f3;
+                outline: none;
             }
             .project-members-setting {
                 width: 4vh;

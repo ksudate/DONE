@@ -20,15 +20,20 @@ body {
   text-align: center;
 }
 
+.flexbox {
+  display: flex;
+}
+
 #header {
   width: 100vw;
   height: 7vh;
   border-bottom: 1px solid #f5f5f5 ;
   display: flex;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: #ffffff;
+  background-color: #f9f9ff;
 }
 
 #header a {
@@ -39,8 +44,9 @@ body {
   color: #8e8eff;
 }
 
-#header p{
+#header .done{
   padding-left: 5vw;
+  padding-right: 2vw;
   color: #7f7fff;
   font-size: 2em;
   line-height: 7vh;
@@ -48,7 +54,15 @@ body {
 }
 
 #header-right {
-  margin-left: auto;
+  display: flex;
+}
+
+.header-icon {
+  color: #696969;
+  font-size: 2em;
+  padding-right: 1.5vw;
+  margin: auto;
+  cursor: pointer;
 }
 
 #header-img {
@@ -80,13 +94,13 @@ body {
 }
 
 #menu-bar {
-  display: flex;
+  /* display: flex; */
 }
 
 .menu-btn {
+  padding: 0vh 2vw;
   line-height: 7vh;
   font-weight: 100;
   font-size: 1.7em;
   color: #AFB4BA;
-  padding-left: 5vw;
 }

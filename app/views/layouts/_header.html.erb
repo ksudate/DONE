@@ -1,10 +1,21 @@
 <div id='header'>
-  <div><a href='/'><p>DONE</p></a></div>
   <% if session[:line_id] %>
-    <div><%= render 'shared/menubar' %></div>
-    <div id='header-right'>
-      <%= image_tag session[:picture_url]+'/small', id: 'header-img', onclick: 'switch_button_display()' %>
-      <%= button_to 'Logout', line_logout_path, method: :delete, class: 'header-link', id: 'logout-btn' %>
+    <div class="flexbox">
+      <a href='/' class='done'>DONE</a>
+      <%= link_to "TASK", posts_path, remote: true, class: 'menu-btn' %>
+      <%= link_to "KPT", splints_path, remote: true, class: 'menu-btn' %>
     </div>
+    <div id='header-right'>
+      <div class='header-icon'><i class="fas fa-ellipsis-h"></i></div>
+      <div class='header-icon'><i class="fas fa-plus"></i></div>
+      <div class='header-icon'><i class="fas fa-bell"></i></div>
+      <div class='header-icon'><i class="fas fa-search"></i></div>
+      <div>
+        <%= image_tag session[:picture_url]+'/small', id: 'header-img', onclick: 'switch_button_display()' %>
+        <%= button_to 'Logout', line_logout_path, method: :delete, class: 'header-link', id: 'logout-btn' %>
+      </div>
+    </div>
+  <% else %>
+    <div><a href='/'><p>DONE</p></a></div>
   <% end %>
 </div>
