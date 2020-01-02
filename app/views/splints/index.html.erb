@@ -1,16 +1,23 @@
-<div id="sprint_dashboard">
+<div id='sprint_dashboard'>
   <div id='sprint_left'>
     <ul>
-      <li class="sprint-left-li-right"><i class="fas fa-bars sprint-left-li-right-i"></i></li>
-      <li class="sprint-left-li"><i class="fas fa-plus"></i> Add KPT</li>
-      <li class="sprint-left-li"><i class="fas fa-chart-bar"></i> Analysis</li>
-      <li class="sprint-left-li"><i class="fas fa-link"></i> Link</li>
-      <li class="sprint-left-li"><i class="fas fa-cog"></i> Project Settings</li>
+      <li class='sprint-left-li-right'><i class='fas fa-bars sprint-left-li-right-i'></i></li>
+      <li class='sprint-left-li'><i class='fas fa-plus'></i> Add KPT</li>
+      <li class='sprint-left-li'><i class='fas fa-chart-bar'></i> Analysis</li>
+      <li class='sprint-left-li'><i class='fas fa-link'></i> Link</li>
+      <li class='sprint-left-li'><i class="fas fa-file-export"></i> Export</li>
+      <li class='sprint-left-li'><i class='fas fa-cog'></i> Project Settings</li>
     </ul>
   </div>
   <div id='sprint'>
     <div id='sprint_header'>
-      <p>Project Name</p>
+      <p><i class="fas fa-home"></i> Project Name</p>
+      <div class='flexbox'>
+        <p class='project-members-plus'>+</p>
+        <%= image_tag session[:picture_url]+'/small', id: 'project-members' %>
+        <p class='project-members-plus'>+1</p>
+        <p class='project-members-setting'><i class='fas fa-cog'></i></p>
+      </div>
     </div>
     <p class='sprint-title'>KPT</p>
     <div id='sprint-table'>
