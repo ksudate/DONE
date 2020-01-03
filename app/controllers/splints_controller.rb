@@ -20,6 +20,7 @@ class SplintsController < ApplicationController
   def new
     @splint = Splint.new
     @sp_number = params[:sp_number]
+    @user = User.find_by(line_id: session[:line_id])
   end
 
   def edit
@@ -49,10 +50,16 @@ class SplintsController < ApplicationController
     redirect_to splints_path
   end
 
+  def analysis
+    @splint_keep = Splint.where(line_id: session[:line_id]).where(kpt: 'Keep')
+    @splint_problem = Splint.where(line_id: session[:line_id]).where(kpt: 'Problem')
+    @splint_try = Splint.where(line_id: session[:line_id]).where(kpt: 'Try')
+  end
+
   private
 
   def splint_params
-    params.require(:splint).permit(:content, :line_id, :kpt, :sp_number)
+    params.require(:splint).permit(:content, :line_id, :kpt, :sp_number, :user_id)
   end
 
   def splint_edit_params
