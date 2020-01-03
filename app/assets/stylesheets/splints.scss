@@ -10,13 +10,16 @@
             font-size: 1.7em;
             color: #ffffff;
             letter-spacing: 0.1em;
-            padding: 2.7vh 2vw;
+            padding: 0;
             a {
+                padding: 2.7vh 2vw;
                 text-decoration: none;
                 color: #ffffff;
+                display: block;
             }
         }
         .sprint-left-li-right {
+            padding: 2.7vh 2vw;
             text-align: right;
             .sprint-left-li-right-i {
                 cursor: pointer;

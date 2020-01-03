@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <div id='sprint_dashboard'>
   <div id='sprint_left'>
     <ul>
@@ -22,6 +23,79 @@
     </div>
     <div>
       <p class="sprint-title">Analysis</p>
+      <div id='pie_chart' class='flexbox'></div>
     </div>
   </div>
 </div>
+<script>
+  function get_cookie_value(key) {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      var c = cookies[i]
+      c = c.replace(/^\s+/, '') //先頭の空白削除
+      var c = c.split('=') //実例:[key, value]
+      if (c[0] == key) {
+        return c[1]
+      }
+    }
+    return null
+  }
+
+  function caluc_kpt_count(kpt, sprint_number) {
+    var count = 0;
+    for (var j = 0; j < kpt.length; j++) {
+      if (kpt[j].sp_number == sprint_number) {
+        count += 1;
+      }
+    }
+    return count
+  }
+
+  sprint_number = get_cookie_value('number')
+  var parent = document.getElementById("pie_chart")
+  for (var i = 1; i <= sprint_number; i++) {
+    var keep = <%= raw @splint_keep.to_json %>;
+    var problem = <%= raw @splint_problem.to_json %>;
+    var try_kpt = <%= raw @splint_try.to_json %>;
+    var keep_count = caluc_kpt_count(keep, i);
+    var problem_count = caluc_kpt_count(problem, i);
+    var try_count = caluc_kpt_count(try_kpt, i);
+    if (keep_count == 0 && problem_count == 0 && try_count == 0) {
+      console.log("no data");
+    } else {
+      var canvas = document.createElement("CANVAS");
+      canvas.id = `pie_chart_${i}`;
+      parent.appendChild(canvas);
+      var ctx = document.getElementById(canvas.id).getContext('2d');
+      ctx.canvas.parentNode.style.height = '27.5vw';
+      ctx.canvas.parentNode.style.width = '27.5vw';
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ["Keep", "Problem", "Try"],
+          datasets: [{
+            backgroundColor: [
+              "#7f7fff",
+              "#ff7f7f",
+              "#7fff7f"
+            ],
+            data: [keep_count, problem_count, try_count]
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            fontSize: 20,
+            text: `Sprint ${i}`
+          },
+          pieceLabel: {
+            render: 'label',
+            position: 'border',
+            arc: true
+          },
+          maintainAspectRatio: false
+        }
+      });
+    }
+  }
+</script>

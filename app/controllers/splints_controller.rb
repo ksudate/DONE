@@ -51,7 +51,9 @@ class SplintsController < ApplicationController
   end
 
   def analysis
-    
+    @splint_keep = Splint.where(line_id: session[:line_id]).where(kpt: 'Keep')
+    @splint_problem = Splint.where(line_id: session[:line_id]).where(kpt: 'Problem')
+    @splint_try = Splint.where(line_id: session[:line_id]).where(kpt: 'Try')
   end
 
   private
