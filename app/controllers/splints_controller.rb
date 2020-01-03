@@ -50,6 +50,10 @@ class SplintsController < ApplicationController
     redirect_to splints_path
   end
 
+  def analysis
+    
+  end
+
   private
 
   def splint_params

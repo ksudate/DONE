@@ -5,5 +5,12 @@ Rails.application.routes.draw do
   delete 'line_logout', to: 'posts#line_logout'
   delete 'splints/delete_splint', to: 'splints#destroy_splint'
   resources :posts
-  resources :splints
+  resources :splints do
+    collection do
+      get :analysis
+      get :link
+      get :export
+      get :project_settings
+    end
+  end
 end

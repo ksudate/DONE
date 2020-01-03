@@ -20,12 +20,8 @@
         <p class='project-members-setting'><i class='fas fa-cog'></i></p>
       </div>
     </div>
-    <p class='sprint-title'>KPT</p>
-    <div id='sprint-table'>
+    <div>
+      <p>Project Settings</p>
     </div>
-    <button id='add_sprint' onclick='create_next_sprint(<%= raw @splint.to_json %>)'>Add Sprint</button>
-    <%= javascript_tag do %>
-      window.sprint = <%= raw @splint.to_json %>;
-    <% end %>
   </div>
 </div>

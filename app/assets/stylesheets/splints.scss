@@ -11,6 +11,10 @@
             color: #ffffff;
             letter-spacing: 0.1em;
             padding: 2.7vh 2vw;
+            a {
+                text-decoration: none;
+                color: #ffffff;
+            }
         }
         .sprint-left-li-right {
             text-align: right;
@@ -22,9 +26,10 @@
             cursor: pointer;
         }
         .sprint-left-li:hover {
-            // background-color: #ffffff;
             background-color: #f9f9ff;
-            color: #adadff;
+            a {
+                color: #adadff;
+            }
         }
     }
     #sprint {
