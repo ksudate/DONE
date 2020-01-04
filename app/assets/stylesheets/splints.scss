@@ -197,13 +197,13 @@
 #pie_chart {
     display: flex;
     flex-flow: wrap;
+    div {
+        padding-top: 4vh;
+    }
 }
 
 @media screen and (max-width: 480px) {
     #pie_chart {
         display: block;
-        div {
-            padding-top: 1vh;
-        }
     }
 }

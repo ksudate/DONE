@@ -2,27 +2,58 @@
   <div id='sprint_left'>
     <ul>
       <li class='sprint-left-li-right'><i class='fas fa-bars sprint-left-li-right-i'></i></li>
-      <li class='sprint-left-li'><a href="/splints"><i class='fas fa-plus'></i> Add KPT</li></a>
-      <li class='sprint-left-li'><a href="/splints/analysis"><i class='fas fa-chart-bar'></i> Analysis</li></a>
-      <li class='sprint-left-li'><a href="/splints/link"><i class='fas fa-link'></i> Link</li></a>
-      <li class='sprint-left-li'><a href="/splints/export"><i class="fas fa-file-export"></i> Export</li></a>
-      <li class='sprint-left-li'><a href="/splints/project_settings"><i class='fas fa-cog'></i> Project Settings</li></a>
+      <li class='sprint-left-li'><a href='/splints'><i class='fas fa-plus'></i> Add KPT</li></a>
+      <li class='sprint-left-li'><a href='/splints/analysis'><i class='fas fa-chart-bar'></i> Analysis</li></a>
+      <li class='sprint-left-li'><a href='/splints/link'><i class='fas fa-link'></i> Link</li></a>
+      <li class='sprint-left-li'><a href='/splints/export'><i class='fas fa-file-export'></i> Export</li></a>
+      <li class='sprint-left-li'><a href='/splints/project_settings'><i class='fas fa-cog'></i> Project Settings</li></a>
     </ul>
   </div>
   <div id='sprint'>
     <div id='sprint_header'>
-      <p><i class="fas fa-home"></i> Project Name</p>
+      <p><i class='fas fa-home'></i> Project Name</p>
       <div class='flexbox'>
         <p class='project-members-plus'>+</p>
         <%= image_tag session[:picture_url]+'/small', id: 'project-members' %>
         <p class='project-members-plus'>+1</p>
-        <input type="text" placeholder=' &#xf002; Search Member' class='fas project-members-search' >
+        <input type='text' placeholder=' &#xf002; Search Member' class='fas project-members-search' >
         <p class='project-members-setting'><i class='fas fa-cog'></i></p>
       </div>
     </div>
     <div>
-      <p class="sprint-title">Link</p>
-      <p>Coming Soon!!</p>
+      <p class='sprint-title'>Link</p>
+      <form>
+        <input type='text' placeholder='Name' name='tool_name' class='link' id='tool_name' onChange='save_localstorage(this)'>
+        <input type='text' placeholder='Link' name='tool_link' class='link' id='tool_link' onChange='save_localstorage(this)'>
+      </form>
+      <div id='link_list'></div>
     </div>
   </div>
 </div>
+<script>
+  function save_localstorage($this) {
+    localStorage.setItem($this.name, $this.value);
+  }
+  for( var key in localStorage ){
+    value = localStorage.get(key)
+    // document.createElement('p');
+    // document.createElement('a');
+  }
+</script>
+<style>
+.link {
+    width: 20vw;
+    height: 5vh;
+    font-size: 2em;
+    color: #d3d3d3;
+    text-align: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0.2em;
+    outline: none;
+}
+.link:focus {
+    background-color: #ffffff;
+    color: #414141;
+}
+</style>
