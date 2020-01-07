@@ -217,6 +217,21 @@
     background-color: #ffffff;
     color: #414141;
 }
+#link_button {
+    font-size: 1.5em;
+    -webkit-appearance: none;
+    text-decoration: none;
+    padding: 1vh 2vw;
+    margin: 2vh;
+    border: solid 1px #414141;
+    border-radius: 0.2em;
+    transition: 0.5s;
+}
+#link_button:hover {
+    transition: 0.5s;
+    background: #414141;
+    color: white;
+}
 #link_list {
     margin: 5vh 30vw;
     li {
