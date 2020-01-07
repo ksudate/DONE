@@ -201,6 +201,40 @@
         padding-top: 4vh;
     }
 }
+// link
+.link {
+    text-indent: 1em;
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.5em;
+    color: #d3d3d3;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0.2em;
+    outline: none;
+}
+.link:focus {
+    background-color: #ffffff;
+    color: #414141;
+}
+#link_list {
+    margin: 5vh 30vw;
+    li {
+        transition: 0.4s;
+        list-style: none;
+        a {
+            padding: 2vh 0;
+            font-size: 2em;
+            text-decoration: none;
+            color: #414141;
+            display: block;
+        }
+    }
+    li:hover {
+        transition: 0.4s;
+        background-color: #d4f0fd;
+    }
+}
 
 @media screen and (max-width: 480px) {
     #pie_chart {
