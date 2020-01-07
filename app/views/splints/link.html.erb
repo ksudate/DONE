@@ -23,30 +23,41 @@
     <div>
       <p class='sprint-title'>Link</p>
       <form>
-        <input type='text' placeholder='Name' name='tool_name' class='link' id='tool_name' onChange='save_localstorage(this)'>
-        <input type='text' placeholder='Link' name='tool_link' class='link' id='tool_link' onChange='save_localstorage(this)'>
+        <input type='text' placeholder='Name' name='tool_name' class='link' id='tool_name'>
+        <input type='text' placeholder='Link' name='tool_link' class='link' id='tool_link'>
+        <button onclick='save_localstorage()'>Add</button>
       </form>
       <div id='link_list'></div>
     </div>
   </div>
 </div>
 <script>
-  function save_localstorage($this) {
-    localStorage.setItem($this.name, $this.value);
+  function save_localstorage() {
+    var key = document.getElementById('tool_name').value;
+    var value = document.getElementById('tool_link').value;
+    if (key && value) {
+      localStorage.setItem(key, value);
+    }
   }
   for( var key in localStorage ){
-    value = localStorage.get(key)
-    // document.createElement('p');
-    // document.createElement('a');
+    var value = localStorage.getItem(key);
+    if (value) {
+      var parent = document.getElementById('link_list');
+      var a_node = document.createElement('a');
+      a_node.innerHTML = key;
+      a_node.href = value;
+      a_node.target = '_blank';
+      parent.appendChild(a_node);
+    }
   }
 </script>
 <style>
 .link {
+    text-indent: 1em;
     width: 20vw;
     height: 5vh;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #d3d3d3;
-    text-align: center;
     background-color: #ffffff;
     border: none;
     border-radius: 0.2em;
