@@ -3,7 +3,7 @@ require 'json'
 
 class SplintsController < ApplicationController
   include Common
-  protect_from_forgery :except => [:destroy_splint]
+  protect_from_forgery except: [:destroy_splint]
   before_action :line_login, only: [:index]
   before_action :authenticate_user
   before_action :ensure_correct_user_splint, only: %i[edit update destroy]
