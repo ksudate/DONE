@@ -3,7 +3,7 @@ require 'json'
 
 class SplintsController < ApplicationController
   include Common
-  protect_from_forgery except: [:destroy_splint]
+  protect_from_forgery except: [:delete_splint]
   before_action :line_login, only: [:index]
   before_action :authenticate_user
   before_action :ensure_correct_user_splint, only: %i[edit update destroy]
@@ -43,7 +43,7 @@ class SplintsController < ApplicationController
     redirect_to splints_path
   end
 
-  def destroy_splint
+  def delete_splint
     @splint = Splint.where(sp_number: params[:sp_number])
     @splint.destroy_all
     redirect_to splints_path

@@ -16,8 +16,4 @@ class TopPagesController < ApplicationController
     #      + '&bot_prompt=aggressive' \
     #      + '&scope=openid%20profile' \
   end
-
-  def mypage
-    
-  end
 end

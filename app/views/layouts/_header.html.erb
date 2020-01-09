@@ -12,7 +12,7 @@
       <div class='header-icon'><i class="fas fa-search"></i></div>
       <div>
         <%= image_tag session[:picture_url]+'/small', id: 'header-img', onclick: 'switch_button_display()' %>
-        <%= button_to 'Logout', line_logout_path, method: :delete, class: 'header-link', id: 'logout-btn' %>
+        <%= button_to 'Logout', line_logout_posts_path, method: :delete, class: 'header-link', id: 'logout-btn' %>
       </div>
     </div>
   <% else %>
