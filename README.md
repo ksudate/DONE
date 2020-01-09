@@ -18,5 +18,8 @@ It is accessible from the URL shown below.
 # URL
 [DONE](https://tmrekk121-done.herokuapp.com)
 
+# ER Diagram
+![done.pdf](https://github.com/tmrekk121/DONE/files/4041315/done.pdf)
+
 # LICENSE
 MIT
