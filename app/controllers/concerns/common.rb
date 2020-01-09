@@ -10,7 +10,7 @@ module Common
     @post = Post.find(params[:id])
     return if @post.user_id == session[:user_id]
 
-    flash[:notice] = '権限がありません'
+    flash[:notice] = 'You do not have permission'
     redirect_to posts_path
   end
 
@@ -18,14 +18,14 @@ module Common
     @splint = Splint.find(params[:id])
     return if @splint.user_id == session[:user_id]
 
-    flash[:notice] = '権限がありません'
+    flash[:notice] = 'You do not have permission'
     redirect_to splints_path
   end
 
   def authenticate_user
     return if session[:user_id]
 
-    flash[:notice] = 'ログインしてください'
+    flash[:notice] = 'Please login'
     redirect_to root_path
   end
 
@@ -82,7 +82,7 @@ module Common
     response = http.request(req)
     return if response.to_s.include?('Net::HTTPOK')
 
-    flash.now[:danger] = '処理に失敗しました。再度、ログイン・ログアウトをおこなってください'
+    flash.now[:danger] = 'Please log in again'
   end
 
   def create_usertable(access_token, line_id)
@@ -96,11 +96,12 @@ module Common
     code = params[:code]
     access_token = fetch_token(code)
     line_id, display_name, picture_url = fetch_line_profile(access_token)
-    user = create_usertable(access_token, line_id)
+    create_usertable(access_token, line_id)
+    user = User.find_by(line_id: line_id)
     session[:user_id] = user.id
     session[:display_name] = display_name
     session[:picture_url] = picture_url
-    flash[:notice] = 'ログインしました'
+    flash[:notice] = 'Login successful'
   end
 
   def line_logout
@@ -109,7 +110,7 @@ module Common
     session.delete(:user_id)
     session.delete(:display_name)
     session.delete(:picture_url)
-    flash[:notice] = 'ログアウトしました'
+    flash[:notice] = 'Logout successful'
     redirect_to root_path
   end
 end

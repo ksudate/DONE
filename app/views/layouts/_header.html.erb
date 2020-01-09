@@ -1,5 +1,5 @@
 <div id='header'>
-  <% if session[:line_id] %>
+  <% if session[:user_id] %>
     <div class="flexbox">
       <a href='/' class='done'>DONE</a>
       <%= link_to "TASK", posts_path, remote: true, class: 'menu-btn' %>
@@ -16,6 +16,6 @@
       </div>
     </div>
   <% else %>
-    <div><a href='/'><p>DONE</p></a></div>
+    <div class="flexbox"><a href='/' class='done'>DONE</a></div>
   <% end %>
 </div>
