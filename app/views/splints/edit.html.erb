@@ -4,9 +4,6 @@
       <div>
         <%= form.text_field :content %>
       </div>
-      <div>
-        <%= form.hidden_field :line_id, :value => session[:line_id] %>
-      </div>
       <%= form.submit 'Update' %>
     <% end %>
   </div>

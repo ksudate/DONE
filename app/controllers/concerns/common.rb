@@ -8,7 +8,7 @@ module Common
 
   def ensure_correct_user_post
     @post = Post.find(params[:id])
-    return if @post.line_id == session[:line_id]
+    return if @post.user_id == session[:user_id]
 
     flash[:notice] = '権限がありません'
     redirect_to posts_path
@@ -16,21 +16,21 @@ module Common
 
   def ensure_correct_user_splint
     @splint = Splint.find(params[:id])
-    return if @splint.line_id == session[:line_id]
+    return if @splint.user_id == session[:user_id]
 
     flash[:notice] = '権限がありません'
     redirect_to splints_path
   end
 
   def authenticate_user
-    return if session[:line_id]
+    return if session[:user_id]
 
     flash[:notice] = 'ログインしてください'
     redirect_to root_path
   end
 
   def require_accesstoken
-    @user = User.find_by(line_id: session[:line_id])
+    @user = User.find_by(id: session[:user_id])
     @access_token = @user.access_token
   end
 
@@ -62,7 +62,7 @@ module Common
     headers = { 'Authorization' => "Bearer #{access_token}" }
     response = http.get(uri.path, headers)
     hash = JSON.parse(response.body)
-    return hash['userId'], hash['displayName'], hash['pictureUrl']
+    [hash['userId'], hash['displayName'], hash['pictureUrl']]
   end
 
   def revoke_token
@@ -90,23 +90,25 @@ module Common
   end
 
   def line_login
-    return if session[:line_id]
+    return if session[:user_id]
 
     setup
     code = params[:code]
     access_token = fetch_token(code)
     line_id, display_name, picture_url = fetch_line_profile(access_token)
-    session[:line_id] = line_id
+    user = create_usertable(access_token, line_id)
+    session[:user_id] = user.id
     session[:display_name] = display_name
     session[:picture_url] = picture_url
-    create_usertable(access_token, line_id)
     flash[:notice] = 'ログインしました'
   end
 
   def line_logout
     setup
     revoke_token
-    session.delete(:line_id)
+    session.delete(:user_id)
+    session.delete(:display_name)
+    session.delete(:picture_url)
     flash[:notice] = 'ログアウトしました'
     redirect_to root_path
   end

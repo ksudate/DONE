@@ -12,7 +12,6 @@
       </div>
       <div id='date-select'>
         <%= form.date_select :deadline %>
-        <%= form.hidden_field :line_id, :value => session[:line_id] %>
       </div>
       <%= form.submit 'Update' %>
     <% end %>

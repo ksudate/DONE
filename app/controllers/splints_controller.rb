@@ -10,7 +10,7 @@ class SplintsController < ApplicationController
 
   def index
     require_accesstoken
-    @splint = Splint.where(line_id: session[:line_id])
+    @splint = Splint.where(user_id: session[:user_id])
   end
 
   def show
@@ -20,7 +20,6 @@ class SplintsController < ApplicationController
   def new
     @splint = Splint.new
     @sp_number = params[:sp_number]
-    @user = User.find_by(line_id: session[:line_id])
   end
 
   def edit
@@ -51,18 +50,18 @@ class SplintsController < ApplicationController
   end
 
   def analysis
-    @splint_keep = Splint.where(line_id: session[:line_id]).where(kpt: 'Keep')
-    @splint_problem = Splint.where(line_id: session[:line_id]).where(kpt: 'Problem')
-    @splint_try = Splint.where(line_id: session[:line_id]).where(kpt: 'Try')
+    @splint_keep = Splint.where(user_id: session[:user_id]).where(kpt: 'Keep')
+    @splint_problem = Splint.where(user_id: session[:user_id]).where(kpt: 'Problem')
+    @splint_try = Splint.where(user_id: session[:user_id]).where(kpt: 'Try')
   end
 
   private
 
   def splint_params
-    params.require(:splint).permit(:content, :line_id, :kpt, :sp_number, :user_id)
+    params.require(:splint).permit(:content, :kpt, :sp_number, :user_id)
   end
 
   def splint_edit_params
-    params.require(:splint).permit(:content, :line_id)
+    params.require(:splint).permit(:content)
   end
 end
