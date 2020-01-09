@@ -18,5 +18,8 @@ It is accessible from the URL shown below.
 # URL
 [DONE](https://tmrekk121-done.herokuapp.com)
 
+# ER
+![ER](/app/assets/images/done.jpg)
+
 # LICENSE
 MIT
