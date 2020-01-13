@@ -1,0 +1,5 @@
+<%= form_with model: @room do |form| %>
+  <%= form.text_field :name %>
+  <%= form.hidden_field :admin_user_id, :value => session[:user_id] %>
+  <%= form.submit 'Add' %>
+<% end %>

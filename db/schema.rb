@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_09_134944) do
+ActiveRecord::Schema.define(version: 2020_01_13_113858) do
+
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_members_on_room_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
@@ -19,6 +28,13 @@ ActiveRecord::Schema.define(version: 2020_01_09_134944) do
     t.datetime "deadline"
     t.string "rank"
     t.integer "user_id"
+  end
+
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "admin_user_id"
   end
 
   create_table "splints", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -37,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_01_09_134944) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "members", "rooms"
+  add_foreign_key "members", "users"
 end

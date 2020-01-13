@@ -1,0 +1,6 @@
+<%= link_to 'New Room', new_room_path %>
+
+<% @rooms.each do |room| %>
+  <%= room.name %>
+  <%= room.admin_user_id%>
+<% end %>

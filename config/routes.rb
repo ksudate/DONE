@@ -15,4 +15,7 @@ Rails.application.routes.draw do
       delete :delete_splint
     end
   end
+  resources :rooms do
+    resource :members, only: [:create, :destroy]
+  end
 end
