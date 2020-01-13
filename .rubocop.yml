@@ -34,3 +34,6 @@ Style/FrozenStringLiteralComment:
 
 ClassAndModuleChildren:
   Enabled: false
+
+Security/JSONLoad:
+  Enabled: false

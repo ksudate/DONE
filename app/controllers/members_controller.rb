@@ -6,6 +6,5 @@ class MembersController < ApplicationController
     redirect_to rooms_path
   end
 
-  def destroy
-  end
+  def destroy; end
 end

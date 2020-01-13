@@ -2,6 +2,7 @@ module ApplicationHelper
   def javascript_path
     path = "#{controller_path}/#{controller_path}.js"
     return 'default.js' unless javascript_file_exist?(path)
+
     path
   end
 
