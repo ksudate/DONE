@@ -1,15 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 <div id='sprint_dashboard'>
-  <div id='sprint_left'>
-    <ul>
-      <li class='sprint-left-li-right'><i class='fas fa-bars sprint-left-li-right-i'></i></li>
-      <li class='sprint-left-li'><a href="/splints"><i class='fas fa-plus'></i> Add KPT</a></li>
-      <li class='sprint-left-li'><a href="/splints/analysis"><i class='fas fa-chart-bar'></i> Analysis</a></li>
-      <li class='sprint-left-li'><a href="/splints/link"><i class='fas fa-link'></i> Link</a></li>
-      <li class='sprint-left-li'><a href="/splints/export"><i class="fas fa-file-export"></i> Export</a></li>
-      <li class='sprint-left-li'><a href="/splints/project_settings"><i class='fas fa-cog'></i> Project Settings</a></li>
-    </ul>
-  </div>
+  <%= render :partial => 'sidemenu' %>
   <div id='sprint'>
     <div id='sprint_header'>
       <p><i class="fas fa-home"></i> Project Name</p>

@@ -85,8 +85,8 @@ module Common
     flash.now[:danger] = 'Please log in again'
   end
 
-  def create_usertable(access_token, line_id)
-    User.create(line_id: line_id, access_token: access_token) unless User.find_by(line_id: line_id)
+  def create_usertable(access_token, line_id, name)
+    User.create(line_id: line_id, access_token: access_token, name: name) unless User.find_by(line_id: line_id)
   end
 
   def line_login
@@ -96,11 +96,12 @@ module Common
     code = params[:code]
     access_token = fetch_token(code)
     line_id, display_name, picture_url = fetch_line_profile(access_token)
-    create_usertable(access_token, line_id)
+    create_usertable(access_token, line_id, display_name)
     user = User.find_by(line_id: line_id)
     session[:user_id] = user.id
     session[:display_name] = display_name
     session[:picture_url] = picture_url
+    # session[:user_id] = 3
     flash[:notice] = 'Login successful'
   end
 

@@ -3,4 +3,10 @@
 <% @rooms.each do |room| %>
   <%= room.name %>
   <%= room.admin_user_id%>
+  <%= button_to 'Add Member', room_members_path(room.id), method: :post %>
+  <% room.members.each do |member| %>
+    <%= member.user.id %>
+  <% end %>
+  <p>----------</p>
 <% end %>
+
