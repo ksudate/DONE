@@ -2,16 +2,11 @@ require 'test_helper'
 
 class SplintTest < ActiveSupport::TestCase
   def setup
-    @splint = Splint.new(sp_number: 1, content: 'HelloWorld', kpt: 'Keep', line_id: 'abcde12345')
+    @splint = Splint.new(sp_number: 1, content: 'HelloWorld', kpt: 'Keep')
   end
 
   test 'should be valid' do
     assert @splint.valid?
-  end
-
-  test 'line_id should be present' do
-    @splint.line_id = '     '
-    assert_not @splint.valid?
   end
 
   test 'sp_number should be present' do

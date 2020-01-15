@@ -3,17 +3,11 @@ require 'time'
 
 class PostTest < ActiveSupport::TestCase
   def setup
-    @post = Post.new(line_id: 'abcde12345', content: 'HelloWorld', \
-                     deadline: Time.zone.now, rank: 'Low')
+    @post = Post.new(content: 'HelloWorld', deadline: Time.zone.now, rank: 'Low')
   end
 
   test 'should be valid' do
     assert @post.valid?
-  end
-
-  test 'line_id should be present' do
-    @post.line_id = '     '
-    assert_not @post.valid?
   end
 
   test 'content should be present' do
