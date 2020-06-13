@@ -1,5 +1,5 @@
 <%= link_to 'New Room', new_room_path %>
-
+<p>----------</p>
 <% @rooms.each do |room| %>
   <%= room.id %>
   <%= room.name %>
@@ -10,4 +10,3 @@
   <% end %>
   <p>----------</p>
 <% end %>
-
